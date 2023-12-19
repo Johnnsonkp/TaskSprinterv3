@@ -11,6 +11,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .Custom-App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
@@ -29,10 +32,27 @@
 }
 
 @keyframes App-logo-spin {
-  from {
+  /* from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  } */
+
+  from {
+    transform: rotate(0deg);
+
+    filter: invert(72%) sepia(51%) saturate(6847%) hue-rotate(321deg) brightness(100%) contrast(80%);
+    filter: invert(44%) sepia(65%) saturate(360%) hue-rotate(153deg) brightness(95%) contrast(94%);
+    filter: invert(62%) sepia(91%) saturate(754%) hue-rotate(196deg) brightness(93%) contrast(92%);
+    filter: invert(100%) sepia(52%) saturate(313%) hue-rotate(33deg) brightness(100%) contrast(95%)
+  }
+  to {
+    transform: rotate(360deg);
+
+    filter: invert(100%) sepia(52%) saturate(313%) hue-rotate(33deg) brightness(100%) contrast(95%);
+    filter: invert(62%) sepia(91%) saturate(754%) hue-rotate(196deg) brightness(93%) contrast(92%);
+    filter: invert(44%) sepia(65%) saturate(360%) hue-rotate(153deg) brightness(95%) contrast(94%);
+    filter: invert(72%) sepia(51%) saturate(6847%) hue-rotate(321deg) brightness(100%) contrast(80%);
   }
 }

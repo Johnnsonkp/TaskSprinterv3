@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Create test app on sandbox and have it work",
+      "completed": true,
+      "date_created": "`${Date.now()}`",
+      "subtasks": [
+        { "id": 1, "name": "first subtask", "completed": false },
+        { "id": 2, "name": "second subtask", "completed": false }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Work on potfolio website on Carrd.co",
+      "completed": true,
+      "date_created": "`${Date.now()}`",
+      "subtasks": [
+        { "id": 2, "name": "first subtask", "completed": false },
+        { "id": 3, "name": "second subtask", "completed": false }
+      ]
+    }
+  ]
+  
