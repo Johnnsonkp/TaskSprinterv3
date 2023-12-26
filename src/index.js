@@ -1,13 +1,30 @@
 import "./index.css";
 
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import App from "./App";
+import LandingPage from "./Pages/LandingPage";
+import PageBoilerPlate from "./Root";
 import React from "react";
 import ReactDOM from "react-dom/client";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/main",
+    element: <PageBoilerPlate component={<App />} />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    {/* <RouterProvider router={<PageBoilerPlate component={router} />} /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

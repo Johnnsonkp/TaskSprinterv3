@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import logo from "../logo.svg";
 
 export const AppLogoContainer = () => {
   return (
-    <div
+    <Link
       style={{
         textAlign: "center",
         color: "#fff",
@@ -14,9 +15,10 @@ export const AppLogoContainer = () => {
         height: "35px",
         boxShadow: "rgba(0, 0, 0, 0.24) 0px 6px 12px 0px",
       }}
+      to={"/"}
     >
       <img className="Custom-App-logo" style={{ width: "72px" }} src={logo} />{" "}
       <h3>TaskSprinter v3</h3>
-    </div>
+    </Link>
   );
 };

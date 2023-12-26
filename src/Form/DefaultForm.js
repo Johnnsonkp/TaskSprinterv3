@@ -4,10 +4,12 @@ import { DatePicker, Space } from "antd";
 import React, { useEffect, useState } from "react";
 
 import { PlusCircleFilled } from "@ant-design/icons";
+import dayjs from "dayjs";
 import { postData } from "../Services/NotionAPI/useFetchData";
 import { reformatDate } from "../Helper/DateFormat";
 
-export default function TaskForm(formTitle) {
+export default function DefaultForm({ formTitle, task }) {
+  const [form] = Form.useForm();
   const { RangePicker } = DatePicker;
   const [formInputs, setFormInputs] = useState({
     name: "",
@@ -15,7 +17,6 @@ export default function TaskForm(formTitle) {
     completed: false,
     date_created: {},
   });
-  const [form] = Form.useForm();
   const handleDateChangeFunc = (e) => {
     setFormInputs({
       ...formInputs,
@@ -36,15 +37,14 @@ export default function TaskForm(formTitle) {
     console.log("formInputs", formInputs);
     form.resetFields();
     submitFormToNotion();
-    window.location.reload();
   }
   async function submitFormToNotion() {
     // const sendPost = await postData(
-    //   "http://localhost:5000/submitFormToNotion",
-    //   "post",
+    //   "http://localhost:5000/updateNotionData",
+    //   "patch",
     //   {
     //     name: formInputs.name,
-    //     completed: false,
+    //     completed: formInputs.completed,
     //     subtasks: formInputs.subtasks,
     //     date_created: formInputs.date_created,
     //   }
@@ -52,8 +52,8 @@ export default function TaskForm(formTitle) {
     // sendPost();
 
     try {
-      const response = await fetch("http://localhost:5000/submitFormToNotion", {
-        method: "post",
+      const response = await fetch("http://localhost:5000/updateNotionData", {
+        method: "put",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -64,6 +64,7 @@ export default function TaskForm(formTitle) {
           completed: formInputs.completed,
           subtasks: formInputs.subtasks,
           date_created: formInputs.date_created,
+          page_id: task.page_id,
         }),
       });
       const data = await response.json();
@@ -73,7 +74,6 @@ export default function TaskForm(formTitle) {
       console.error("Error:", error);
     }
   }
-
   return (
     <>
       <Form
@@ -83,7 +83,7 @@ export default function TaskForm(formTitle) {
         layout="horizontal"
         className="task-form hideForm"
       >
-        <h1>{formTitle.formTitle ? formTitle.formTitle : "form"}</h1>
+        <h1>{formTitle}</h1>
         <Row gutter={20}>
           <Col xs={24} s={24} md={17} lg={19} xl={20}>
             <Form.Item
@@ -93,14 +93,16 @@ export default function TaskForm(formTitle) {
               <Input
                 onChange={(e) => handleChangeFunc(e)}
                 name={"name"}
-                placeholder="What needs to be done?"
+                // placeholder={task.name && task.name}
+                defaultValue={task.name && task.name}
               />
             </Form.Item>
             <Form.Item name={"subtasks"}>
               <Input.TextArea
                 onChange={(e) => handleChangeFunc(e)}
                 name={"subtasks"}
-                placeholder="Task Description"
+                // placeholder="Task Description"
+                defaultValue={task.subtasks && task.subtasks}
               />
             </Form.Item>
           </Col>
@@ -111,6 +113,9 @@ export default function TaskForm(formTitle) {
                 showTime
                 showNow
                 showToday
+                // defaultValue={task.date_created && task.date_created}
+                // defaultValue={dayjs("2023-01-01")}
+                // defaultValue={task.date_created}
                 onChange={(e) => handleDateChangeFunc(e)}
               />
             </Form.Item>
@@ -139,12 +144,15 @@ export default function TaskForm(formTitle) {
         </Row>
         <div style={{ display: "flex" }}>
           <Col
-            style={{ paddingLeft: "0px", textAlign: "left" }}
+            style={{
+              paddingLeft: "0px",
+              textAlign: "left",
+            }}
             xs={24}
             s={24}
-            md={7}
-            lg={5}
-            xl={4}
+            md={16}
+            lg={19}
+            xl={20}
           >
             <Button
               type="primary"
@@ -153,7 +161,7 @@ export default function TaskForm(formTitle) {
               onClick={(e) => onSubmit(e)}
             >
               <PlusCircleFilled />
-              Add Task
+              Update Task
             </Button>
           </Col>
         </div>

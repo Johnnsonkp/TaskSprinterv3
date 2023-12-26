@@ -32,13 +32,6 @@
 }
 
 @keyframes App-logo-spin {
-  /* from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  } */
-
   from {
     transform: rotate(0deg);
 
@@ -55,4 +48,17 @@
     filter: invert(44%) sepia(65%) saturate(360%) hue-rotate(153deg) brightness(95%) contrast(94%);
     filter: invert(72%) sepia(51%) saturate(6847%) hue-rotate(321deg) brightness(100%) contrast(80%);
   }
+}
+
+
+/* sidebar menu */
+aside .ant-menu-root{
+  padding-top: 85px;
+}
+aside .ant-menu-item{
+  border: 1px solid #282c3415;
+  margin-top: 10px !important;
+  width: 85% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
