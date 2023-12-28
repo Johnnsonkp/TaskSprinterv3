@@ -33,7 +33,6 @@ function PageBoilerPlate(component) {
       return {
         key: `sub${key}`,
         icon: React.createElement(icon),
-        // label: `subnav ${key}`,
         label: appPages[index],
       };
     }
@@ -45,7 +44,7 @@ function PageBoilerPlate(component) {
         <Nav />
         <Layout>
           <Sider
-            width={200}
+            width={220}
             style={{
               backgroundColor: "#fff",
             }}
@@ -71,7 +70,7 @@ function PageBoilerPlate(component) {
           >
             <Breadcrumb
               style={{
-                margin: "16px 0",
+                margin: "13px 0",
               }}
             >
               <Breadcrumb.Item>Auth</Breadcrumb.Item>
@@ -97,9 +96,9 @@ function PageBoilerPlate(component) {
               </Drawer>
               {component.component}
               <Space>
-                <Button type="primary" onClick={showLargeDrawer}>
+                {/* <Button type="primary" onClick={showLargeDrawer}>
                   Add New Task
-                </Button>
+                </Button> */}
               </Space>
             </Content>
           </Layout>

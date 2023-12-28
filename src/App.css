@@ -62,3 +62,111 @@ aside .ant-menu-item{
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* Landing page  */
+#landingPage{
+  /* background: url('/public/landing-temp.jpeg');
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  z-index: 0;
+  position: relative;
+  width: 40%;
+  border-radius: 550px; */
+}
+#landingPage-still{
+  /* background: url('/public/landing-temp.jpeg'); */
+  background: linear-gradient(180deg, rgba(242, 19, 180, 0.06) 0%, rgba(108, 8, 209, 0) 33.52%), #13111C !important;
+  background: linear-gradient(327.21deg, rgba(33, 0, 75, 0.24) 3.65%, rgba(60, 0, 136, 0) 40.32%), linear-gradient(245.93deg, rgba(209, 21, 111, 0.16) 0%, rgba(209, 25, 80, 0) 36.63%), linear-gradient(147.6deg, rgba(58, 19, 255, 0) 29.79%, rgba(98, 19, 255, 0.01) 85.72%), #13111C;
+  /* background-position: center center; */
+  /* height: 90vh; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  height: 85vh;
+}
+.landing-grid-svg-image{
+  /* background-color: hsl(250, 21%, 11%); */
+  width: 630px;
+  height: 100%;
+  /* border: 1px solid red; */
+  z-index: 9000;
+  background: url('/public/grid--dark.svg');
+  background-position: center center;
+}
+#LandingPageTaskPageImage{
+  background: url('/public/Screen\ Shot\ 2023-12-28\ at\ 11.57.08\ pm.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 650px;
+  width: 80%;
+  height: 400px;
+}
+.left{
+  flex: 0.5;
+  align-items: flex-start ;
+  justify-content: flex-start;
+  /* border: 1px solid red; */
+}
+.right{
+  flex: 0.4;
+}
+.left h1{
+  font-size: 65px;
+  font-size: 4.5rem;
+}
+.left p{
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: var(--gray-200);
+    margin: 0px;
+    margin-bottom: 2.6rem;
+    max-width: 38rem;
+    /* font-size: 20px; */
+    line-height: 1.8;
+    color: var(--gray-500);
+    /* border: 1px solid red; */
+}
+.left Button{
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    color: rgb(255 255 255/var(--tw-text-opacity));
+    display: flex;
+    height: 50px;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem !important;
+    background-image: linear-gradient(76.35deg, rgb(102, 10, 194) 15.89%, rgb(133, 10, 194) 89.75%);
+    padding-left: 3.75rem !important;
+    padding-right: 3.75rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    font-size: 16px;
+    line-height: 1.5rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 50ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #landingPage {
+    animation: landing-page-image infinite 15s linear;
+  }
+}
+
+@keyframes landing-page-image {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
