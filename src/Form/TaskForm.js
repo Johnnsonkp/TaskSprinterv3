@@ -36,42 +36,27 @@ export default function TaskForm(formTitle) {
     console.log("formInputs", formInputs);
     form.resetFields();
     submitFormToNotion();
-    window.location.reload();
+    refreshAfter2Seconds();
+  }
+  function refreshAfter2Seconds() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    });
   }
   async function submitFormToNotion() {
-    // const sendPost = await postData(
-    //   "http://localhost:5000/submitFormToNotion",
-    //   "post",
-    //   {
-    //     name: formInputs.name,
-    //     completed: false,
-    //     subtasks: formInputs.subtasks,
-    //     date_created: formInputs.date_created,
-    //   }
-    // );
-    // sendPost();
-
-    try {
-      const response = await fetch("http://localhost:5000/submitFormToNotion", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          mode: "no-cors",
-        },
-        body: JSON.stringify({
-          name: formInputs.name,
-          completed: formInputs.completed,
-          subtasks: formInputs.subtasks,
-          date_created: formInputs.date_created,
-        }),
-      });
-      const data = await response.json();
-      console.log("Success", response);
-      return data;
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    const sendPost = await postData(
+      "https://tsv3-server-production.up.railway.app/submitFormToNotion",
+      "post",
+      {
+        name: formInputs.name,
+        completed: formInputs.completed,
+        subtasks: formInputs.subtasks,
+        date_created: formInputs.date_created,
+      }
+    );
+    sendPost();
   }
 
   return (

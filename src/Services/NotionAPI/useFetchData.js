@@ -1,3 +1,19 @@
+// export async function getData(url, method) {
+//   try {
+//     const res = await fetch(url, {
+//       method: method,
+//       headers: {
+//         "Content-Type": "application/json",
+//         Accept: "application/json",
+//       },
+//     });
+//     const data = await res.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
 export async function getData(url, method) {
   try {
     const res = await fetch(url, {
@@ -7,8 +23,28 @@ export async function getData(url, method) {
         Accept: "application/json",
       },
     });
-    const data = await res.json();
-    return data;
+    if (res.ok) {
+      console.log("res.ok", res.ok);
+      return res.json();
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+export async function removeData(url, method, data, pageReload) {
+  try {
+    const res = await fetch(url, {
+      method: method,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      console.log("Success");
+      return res.json();
+    }
   } catch (error) {
     console.error("Error:", error);
   }
@@ -21,20 +57,24 @@ export async function postData(url, method, data) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(data && data),
     });
-    const data = await response.json();
+    // const data = await response.json();
     console.log("Success", response);
-    return data;
+    console.log("response.ok", response.ok);
+    // return data;
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
-// export async function updateData(data) {
+// export async function removeData(url, method, data) {
+//   console.error("data:", data);
+//   console.error("data.page_id:", data.page_id);
 //   try {
-//     const response = await fetch(url, {
+//     return await fetch(url, {
 //       method: method,
 //       headers: {
 //         "Content-Type": "application/json",
@@ -46,30 +86,3 @@ export async function postData(url, method, data) {
 //     console.error("Error:", error);
 //   }
 // }
-
-export async function removeData(url, method, data) {
-  try {
-    return await fetch(url, {
-      method: method,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-
-// export const destroy = (id) => {
-//   const authToken = JSON.parse(window.localStorage.getItem("auth"));
-//   return fetch(`${baseUrl}tasks/${id}`, {
-//     method: "DELETE",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//       Authorization: "Bearer " + authToken.token,
-//     },
-//   });
-// };

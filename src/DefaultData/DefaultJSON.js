@@ -1,12 +1,13 @@
 export const defaultObj = [
   {
     id: 1,
-    name: "defaultObj name ",
+    name: "Deploy app on netlify ",
     completed: true,
-    date_created: `${Date.now()}`,
-    // subtasks: [
-    //   { id: 1, name: "first subtask", completed: false },
-    //   { id: 2, name: "second subtask", completed: false },
-    // ],
+    date_created: {
+      start: Date.now(),
+      end: Date.now(),
+    },
+    subtasks:
+      "Deploy the frontend of the application on netlify and connect it to the backend server deployed on Railway app",
   },
 ];
