@@ -1,9 +1,12 @@
 // import "./Apps";
 
+import "./index.css";
+
 import { Button } from "antd";
 import { DefaultContainer } from "../Containers/DefaultContainer";
 import { Link } from "react-router-dom";
 import Nav from "../components/ui.components/Nav";
+
 export default function LandingPage() {
   return (
     <>
@@ -13,27 +16,35 @@ export default function LandingPage() {
           <div className="left">
             <DefaultContainer
               content={
-                <>
-                  <h1>Elevate Your Productivity</h1>
+                <div>
+                  <h2>Elevate Your Productivity</h2>
                   <p>
-                    Enter the new era of task management where the synergy of
-                    React, Notion, and OpenAI converges to redefine your
-                    productivity journey.
+                    The new era of task management were the synergy of React,
+                    Notion, and OpenAI converges to redefine your productivity
+                    journey.
                   </p>
-                </>
+                  <Button className="mobile-view">
+                    <Link to={`/main`}>Start a New Project!</Link>
+                  </Button>
+                </div>
               }
             />
             <DefaultContainer
               content={
-                <Button>
+                <Button className="desktop-view">
                   <Link to={`/main`}>Start a New Project!</Link>
                 </Button>
               }
             />
           </div>
 
-          <div className="right" id="LandingPageTaskPageImage">
-            <img className="landing-grid-svg-image" src="/grid--dark.svg" />
+          <div className="right landing-grid-svg-image">
+            <img
+              className="landing-page-image"
+              // src="/landing-logo-stack-2.png"
+              // src="/landing-page-zoomed.png"
+              src="/landing-black.png"
+            />
           </div>
         </div>
       </div>
@@ -42,6 +53,12 @@ export default function LandingPage() {
         <img src="/netlify-ar21.svg" />
         <img src="/netlify-ar21.svg" />
         <img src="/netlify-ar21.svg" />
+        {/* <img src="/netlify-ar21.svg" /> */}
+        {/* <img src="/reactLogo.svg" />
+        <img src="/node-js.svg" />
+        <img src="/netlify-ar21.svg" />
+        <img src="/notion-logo-1.svg" />
+        <img src="/railwayapp-logo-dark.svg" /> */}
       </div>
     </>
   );

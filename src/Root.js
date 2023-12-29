@@ -13,6 +13,7 @@ import DayNightSwitch from "./components/DayNightSwitch";
 import Nav from "./components/ui.components/Nav";
 import React from "react";
 import TaskForm from "./Form/TaskForm";
+import Wave from "./components/ui.components/RainbowAnimation";
 
 const { Header, Content, Sider } = Layout;
 
@@ -25,7 +26,7 @@ function PageBoilerPlate(component) {
   const showLargeDrawer = () => {
     setOpen(true);
   };
-  const appPages = ["Home", "Main", "Notes"];
+  const appPages = ["Home", "Main Workspace", "Notes"];
 
   const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
     (icon, index) => {
@@ -49,9 +50,9 @@ function PageBoilerPlate(component) {
               backgroundColor: "#fff",
             }}
           >
-            <div style={{ marginTop: "20px" }}>
+            {/* <div style={{ marginTop: "20px" }}>
               <DayNightSwitch />
-            </div>
+            </div> */}
             <Menu
               mode="inline"
               defaultSelectedKeys={["1"]}
@@ -59,6 +60,7 @@ function PageBoilerPlate(component) {
               style={{
                 height: "100%",
                 borderRight: 5,
+                textAlign: "left",
               }}
               items={items2}
             />
@@ -73,6 +75,7 @@ function PageBoilerPlate(component) {
                 margin: "13px 0",
               }}
             >
+              {/* <Wave /> */}
               <Breadcrumb.Item>Auth</Breadcrumb.Item>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
             </Breadcrumb>
