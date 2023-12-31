@@ -72,7 +72,7 @@ function PageBoilerPlate(component) {
           >
             <Breadcrumb
               style={{
-                margin: "13px 0",
+                margin: "8px 0",
               }}
             >
               {/* <Wave /> */}

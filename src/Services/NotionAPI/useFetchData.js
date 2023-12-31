@@ -1,19 +1,3 @@
-// export async function getData(url, method) {
-//   try {
-//     const res = await fetch(url, {
-//       method: method,
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json",
-//       },
-//     });
-//     const data = await res.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }
-
 export async function getData(url, method) {
   try {
     const res = await fetch(url, {
@@ -32,6 +16,7 @@ export async function getData(url, method) {
   }
 }
 export async function removeData(url, method, data, pageReload) {
+  console.log("to update data:", data);
   try {
     const res = await fetch(url, {
       method: method,
@@ -69,20 +54,3 @@ export async function postData(url, method, data) {
     console.error("Error:", error);
   }
 }
-
-// export async function removeData(url, method, data) {
-//   console.error("data:", data);
-//   console.error("data.page_id:", data.page_id);
-//   try {
-//     return await fetch(url, {
-//       method: method,
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     });
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }

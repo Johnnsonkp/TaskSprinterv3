@@ -7,14 +7,16 @@ import { Drawer } from "antd";
 import React from "react";
 import StandUpComponent from "../StandUp/StandUpComp";
 import StandUpComponentSimplified from "../StandUp/StandUpComponent";
+import { StandUpMenu } from "../StandUp/StandUpMenu";
 import TaskForm from "../Form/TaskForm";
 import TaskListIndex from "../TaskList";
 import { defaultObj } from "../DefaultData/DefaultJSON";
 import { getData } from "../Services/NotionAPI/useFetchData";
 
-export default function Main() {
+export default function Main({ taskArr, handleDelete, UpdateTask }) {
   const [tasksContainer, setTasksContainer] = useState();
   const [open, setOpen] = useState(false);
+  const [completedTask, setCompletedTask] = useState();
 
   const onClose = () => {
     setOpen(false);
@@ -23,27 +25,27 @@ export default function Main() {
     setOpen(true);
   };
 
-  useEffect(() => {
-    loadData();
-
-    async function loadData() {
-      const fetchData = await getData(
-        "https://tsv3-server-production.up.railway.app/fetchNotionData",
-        "get"
-      );
-      setTasksContainer(fetchData);
-    }
-  }, []);
-
   const initialItems = [
     {
       label: "All Tasks",
-      children: <TaskListIndex task={tasksContainer || defaultObj} />,
+      children: (
+        <TaskListIndex
+          task={taskArr}
+          handleDelete={handleDelete}
+          UpdateTask={UpdateTask}
+        />
+      ),
       key: "1",
     },
     {
       label: "Completed Tasks",
-      children: "Content of Tab 2",
+      children: (
+        <TaskListIndex
+          task={taskArr.filter((singleTask) => singleTask.completed === true)}
+          handleDelete={handleDelete}
+          UpdateTask={UpdateTask}
+        />
+      ),
       key: "2",
     },
     {
@@ -70,7 +72,7 @@ export default function Main() {
   ];
   return (
     <>
-      <DefaultContainer content={<StandUpComponent />} />
+      <DefaultContainer content={<StandUpMenu />} />
       <DefaultContainer
         content={
           <Tabs

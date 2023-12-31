@@ -1,6 +1,8 @@
 import { Button, Card } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 
+import { styles } from "./standUp.styles";
+
 const StandUpComponentSimplified = () => {
   const initialText = { task: "What are you working on today?", toggle: false };
   const standUpLocalStorage = JSON.parse(
@@ -49,28 +51,48 @@ const StandUpComponentSimplified = () => {
   };
 
   return (
-    <div>
+    <div style={styles.container}>
       <Card
         title={flip ? `Daily priorities` : `Daily priorities`}
-        bordered={false}
+        bordered={true}
+        style={{
+          minWidth: 480,
+          // width: 400,
+          minHeight: 200.14,
+          maxHeight: 200.14,
+          textAlign: "left",
+          boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+          background: "#C6FFDD",
+          background: "#e5fffd",
+        }}
       >
         <Button
+          style={styles.button}
           type="primary"
           onClick={() => setWithExpiry("standup", data)}
         >{`Save Items`}</Button>
         <div>
-          <div className="front" ref={frontEl}>
+          <div
+            className="front"
+            ref={frontEl}
+            style={{
+              width: "100%",
+              margin: "auto",
+              position: "relative",
+              top: "-75px",
+            }}
+          >
             {data.map((content, key) =>
               content.task ? (
-                <div key={key}>
+                <div key={key} style={styles.inputStyle}>
                   <input
                     type="checkbox"
                     id={key}
                     checked={content.toggle}
                     onClick={() => onTaskToggle(content)}
                   />
-                  <label>
-                    <p>
+                  <label style={styles.taskContainer}>
+                    <p style={styles.individualTask}>
                       <div>{counter++}. </div>
                       <span
                         style={{
@@ -87,6 +109,11 @@ const StandUpComponentSimplified = () => {
                       onClick={() => onTaskDelete(content)}
                       type="primary"
                       danger
+                      style={{
+                        padding: "4px 7px",
+                        margin: "2px",
+                        height: "30px",
+                      }}
                     >
                       X
                     </Button>
@@ -102,8 +129,14 @@ const StandUpComponentSimplified = () => {
                   onChange={(event) => handleChange(event)}
                   value={toggle ? "" : input}
                   placeholder="What are you working on today?"
+                  style={{ width: "80%", padding: "5px" }}
                 />
-                <button onClick={() => handleAddStandup()}>Add Task</button>
+                <button
+                  style={{ marginLeft: "5px", cursor: "pointer" }}
+                  onClick={() => handleAddStandup()}
+                >
+                  Add Task
+                </button>
               </div>
             )}
           </div>

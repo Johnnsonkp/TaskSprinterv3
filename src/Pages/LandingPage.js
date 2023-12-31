@@ -16,7 +16,13 @@ export default function LandingPage() {
           <div className="left">
             <DefaultContainer
               content={
-                <div>
+                <div
+                  style={{
+                    // border: "1px solid red",
+                    width: "100%",
+                    marginBottom: "0px",
+                  }}
+                >
                   <h2>Elevate Your Productivity</h2>
                   <p>
                     The new era of task management were the synergy of React,
@@ -27,13 +33,6 @@ export default function LandingPage() {
                     <Link to={`/main`}>Start a New Project!</Link>
                   </Button>
                 </div>
-              }
-            />
-            <DefaultContainer
-              content={
-                <Button className="desktop-view">
-                  <Link to={`/main`}>Start a New Project!</Link>
-                </Button>
               }
             />
           </div>
