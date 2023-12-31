@@ -3,6 +3,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import Home from "./Pages/Home";
 import LandingPage from "./Pages/LandingPage";
 import PageBoilerPlate from "./Root";
 import React from "react";
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
+    path: "/home",
+    element: <Home />,
+  },
+  {
     path: "/main",
     element: <PageBoilerPlate component={<App />} />,
   },
@@ -22,8 +27,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <RouterProvider router={<PageBoilerPlate component={router} />} /> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );

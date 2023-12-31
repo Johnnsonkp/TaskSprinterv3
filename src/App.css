@@ -84,7 +84,7 @@ aside .ant-menu-item{
   /* border: 1px solid red; */
 }
 .landing-page-image{
-  width: 550px;
+  width: 650px;
   z-index: 9000;
   /* border: 1px solid red; */
 }
@@ -102,6 +102,7 @@ aside .ant-menu-item{
   flex: 0.7;
   align-items: flex-start ;
   justify-content: flex-start;
+  margin-bottom: 60px;
   /* border: 1px solid red; */
 }
 .right{
@@ -114,7 +115,8 @@ aside .ant-menu-item{
 }
 .left h2{
   font-size: 65px;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
+  margin-bottom: 1.8rem;
 }
 .left p{
     font-size: 1.2rem;
@@ -123,7 +125,8 @@ aside .ant-menu-item{
     border-style: solid;
     border-color: var(--gray-200);
     margin: 0px;
-    margin-bottom: 2.6rem;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
     max-width: 38rem;
     /* font-size: 20px; */
     line-height: 1.6;

@@ -16,14 +16,13 @@ import React from "react";
 import { reformatDate } from "../Helper/DateFormat";
 import { removeData } from "../Services/NotionAPI/useFetchData";
 
-export default function TaskListComp(task) {
+export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
   const [selectTask, setSelectTask] = useState();
   const [taskReloaded, setTaskReloaded] = useState();
   const [taskComplete, setTaskComplete] = useState(false);
-  let arr = [];
-  let taskArr = task.task.task;
+  const [toggleTaskComletion, setToggleTaskCompletion] = useState(false);
 
   const onClose = () => {
     setOpen(false);
@@ -32,11 +31,11 @@ export default function TaskListComp(task) {
     setOpen(true);
   };
   function selectedTask(task) {
-    console.log("selectedTask func task", task);
     setSelectTask(task);
   }
 
-  task.task.task.forEach((singleTask) => {
+  let arr = [];
+  task.forEach((singleTask) => {
     arr.push({
       name: singleTask.name,
       subtasks: singleTask.subtasks,
@@ -46,28 +45,14 @@ export default function TaskListComp(task) {
     });
   });
 
-  const DeleteTask = (item) => {
-    removeData(
-      "https://tsv3-server-production.up.railway.app/archivePage",
-      "put",
-      item
-    );
-    setToggle(true);
-  };
-
   async function TaskCompleteClicked(item) {
     item.completed = !item.completed;
-    console.log("item:", item.completed, item);
-    removeData(
-      "https://tsv3-server-production.up.railway.app/updateNotionData",
-      "put",
-      item
-    );
-    setToggle(true);
+    UpdateTask(item);
   }
   async function taskReload() {
     const res = await getData(
       "https://tsv3-server-production.up.railway.app/fetchNotionData",
+      // "http://localhost:5000/fetchNotionData",
       "get"
     );
     setTaskReloaded(res);
@@ -78,15 +63,6 @@ export default function TaskListComp(task) {
       showLargeDrawer();
     }
   }, [selectTask]);
-
-  useEffect(() => {
-    if (toggle) {
-      setTimeout(() => {
-        taskReload();
-        setToggle(false);
-      }, 200);
-    }
-  }, [toggle]);
 
   return (
     <div
@@ -109,26 +85,22 @@ export default function TaskListComp(task) {
         style={{
           cursor: "pointer",
         }}
-        dataSource={
-          taskReloaded &&
-          Object.keys(taskReloaded).length !== 0 &&
-          taskReloaded < arr
-            ? taskReloaded
-            : arr
-        }
+        dataSource={arr}
         renderItem={(item) => (
           <List.Item
             key={item.page_id}
             className="taskList"
             style={{
               backgroundColor: item.completed
-                ? "lightGreen"
+                ? "rgba(103, 245, 149, 0.4)"
                 : "rgba(140, 140, 140, 0.15)",
               margin: "8px",
               borderRadius: "8px",
               padding: "0px 10px",
               borderLeft: `5px solid ${
-                item.completed ? "lightGreen" : "#1890ff70"
+                (taskReloaded && taskReloaded.completed) || item.completed
+                  ? "rgba(103, 245, 149, 1)"
+                  : "#1890ff70"
               }`,
             }}
           >
@@ -139,7 +111,9 @@ export default function TaskListComp(task) {
               avatar={
                 <CheckCircleOutlined
                   style={{
-                    color: item.completed ? "lightGreen" : "#1890ff70",
+                    color: item.completed
+                      ? "rgba(103, 245, 149, 1)"
+                      : "#1890ff70",
                     fontSize: "28px",
                     cursor: "pointer",
                   }}
@@ -179,7 +153,7 @@ export default function TaskListComp(task) {
                 cursor: "pointer",
                 border: "1px solid red",
               }}
-              onClick={() => DeleteTask(item)}
+              onClick={() => handleDelete(item)}
             />
           </List.Item>
         )}

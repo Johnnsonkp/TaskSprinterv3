@@ -1,7 +1,7 @@
 /* media query */
-.mobile-view{
+/* .mobile-view{
     display: none !important;
-}
+} */
 @media screen and (max-width: 1200px){
     .right{
         flex: 0.2;
