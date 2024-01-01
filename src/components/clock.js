@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Clock() {
+export default function Clock(color) {
   const current = new Date();
   const initialDataObj = {
     hours: current.getHours(),
@@ -34,6 +34,7 @@ export default function Clock() {
 
   return (
     <div
+      className="NavClock"
       style={{
         color: "#fff",
         fontWeight: "900",

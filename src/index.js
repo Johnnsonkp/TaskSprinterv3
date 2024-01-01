@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <PageBoilerPlate component={<Home />} />,
   },
   {
     path: "/main",

@@ -57,9 +57,8 @@ const StandUpComponentSimplified = () => {
         bordered={true}
         style={{
           minWidth: 480,
-          // width: 400,
-          minHeight: 200.14,
-          maxHeight: 200.14,
+          minHeight: 230.14,
+          maxHeight: 230.14,
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           background: "#C6FFDD",
