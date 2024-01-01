@@ -1,0 +1,11 @@
+@media only screen and (max-width: 400px){
+    #mainNav .Custom-App-logo{
+        width: 50px !important;
+    }
+    #mainNav h3{
+        font-size: 14px !important;
+    }
+    #mainNav .NavClock{
+        font-size: 13px !important;
+    }
+}

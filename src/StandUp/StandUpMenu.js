@@ -1,3 +1,4 @@
+import CompletedTaskRate from "./CompletedTaskRate";
 import StandUpComponentSimplified from "./StandUpComponent";
 export function StandUpMenu() {
   return (
@@ -8,12 +9,13 @@ export function StandUpMenu() {
         // border: "1px solid red",
         border: "2px solid lightblue",
         borderRadius: "15px",
-        padding: "15px 10px",
+        padding: "0px 10px",
+        paddingBottom: "15px",
         background: `url("/header-background copy.svg")`,
       }}
     >
       <StandUpComponentSimplified />
-      <StandUpComponentSimplified />
+      <CompletedTaskRate />
     </div>
   );
 }
