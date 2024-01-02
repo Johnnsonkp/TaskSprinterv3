@@ -1,0 +1,23 @@
+@media screen and (max-width: 800px){
+    .defaultContainer{
+      width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .standupSimplified .standup-card{
+      width: 100% !important;
+      margin: auto !important;
+      /* border: 10px solid red !important; */
+      min-width: 20% !important;
+    }
+    .standupSimplified .ant-card{
+        min-width: 20% !important;
+        /* border: 10px solid green !important; */
+    }
+    .standupSimplified .ant-card Button{
+        top: -85px !important;
+        left: 60% !important;
+    }
+}
+

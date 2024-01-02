@@ -15,11 +15,13 @@ import Nav from "./components/ui.components/Nav";
 import React from "react";
 import TaskForm from "./Form/TaskForm";
 import Wave from "./components/ui.components/RainbowAnimation";
+import { useWindowSize } from "./Helper/UseWindowSize";
 
 const { Header, Content, Sider } = Layout;
 
 function PageBoilerPlate(component) {
   const [open, setOpen] = useState(false);
+  const size = useWindowSize();
 
   const onClose = () => {
     setOpen(false);
@@ -51,6 +53,7 @@ function PageBoilerPlate(component) {
         <Nav />
         <Layout>
           <Sider
+            className="sider"
             width={220}
             style={{
               backgroundColor: "#fff",
@@ -69,7 +72,6 @@ function PageBoilerPlate(component) {
                 textAlign: "left",
                 background: `url("/header-background copy.svg")`,
                 backgroundColor: "rgba(255, 255, 255, 0.1)",
-                // boxShadow: rgba(100, 100, 100, 0.3) 0px 0px 5px 3px;
               }}
               // items={items2}
               items={[
@@ -94,6 +96,7 @@ function PageBoilerPlate(component) {
             />
           </Sider>
           <Layout
+            className="boilerplate-layout"
             style={{
               padding: "0 24px 24px",
             }}

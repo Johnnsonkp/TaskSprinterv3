@@ -1,6 +1,8 @@
+import "./defaultContainer.css";
 export const DefaultContainer = ({ content }) => {
   return (
     <div
+      className="defaultContainer"
       style={{
         width: "90%",
         marginLeft: "auto",

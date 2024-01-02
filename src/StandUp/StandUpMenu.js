@@ -1,5 +1,8 @@
+import "./standup.css";
+
 import CompletedTaskRate from "./CompletedTaskRate";
 import StandUpComponentSimplified from "./StandUpComponent";
+
 export function StandUpMenu() {
   return (
     <div
@@ -14,8 +17,12 @@ export function StandUpMenu() {
         background: `url("/header-background copy.svg")`,
       }}
     >
-      <StandUpComponentSimplified />
-      <CompletedTaskRate />
+      <span className="standupSimplified">
+        <StandUpComponentSimplified />
+      </span>
+      <span className="CompletedTaskRate">
+        <CompletedTaskRate />
+      </span>
     </div>
   );
 }
