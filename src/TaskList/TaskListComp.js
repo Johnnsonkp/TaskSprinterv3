@@ -50,6 +50,15 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
     UpdateTask(item);
     setToggle(true);
   }
+  const onTaskDelete = (item) => {
+    console.log("taskReloaded", taskReloaded);
+    setTaskReloaded(
+      taskReloaded
+        ? taskReloaded.filter((oldData) => oldData !== item)
+        : arr.filter((oldData) => oldData !== item)
+    );
+    handleDelete(item);
+  };
 
   useEffect(() => {
     if (selectTask) {
@@ -162,7 +171,8 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 cursor: "pointer",
                 border: "1px solid red",
               }}
-              onClick={() => handleDelete(item)}
+              // onClick={() => handleDelete(item)}
+              onClick={() => onTaskDelete(item)}
             />
           </List.Item>
         )}
