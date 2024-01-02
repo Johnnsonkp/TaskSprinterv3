@@ -48,14 +48,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   async function TaskCompleteClicked(item) {
     item.completed = !item.completed;
     UpdateTask(item);
-  }
-  async function taskReload() {
-    const res = await getData(
-      "https://tsv3-server-production.up.railway.app/fetchNotionData",
-      // "http://localhost:5000/fetchNotionData",
-      "get"
-    );
-    setTaskReloaded(res);
+    setToggle(true);
   }
 
   useEffect(() => {
@@ -63,6 +56,24 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
       showLargeDrawer();
     }
   }, [selectTask]);
+
+  useEffect(() => {
+    if (toggle) {
+      setTimeout(() => {
+        console.log("setTimeout");
+        taskReload();
+      }, [400]);
+
+      async function taskReload() {
+        const res = await getData(
+          "https://tsv3-server-production.up.railway.app/fetchNotionData",
+          "get"
+        );
+        setTaskReloaded(res);
+      }
+      setToggle(false);
+    }
+  }, [TaskCompleteClicked]);
 
   return (
     <div
@@ -85,7 +96,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         style={{
           cursor: "pointer",
         }}
-        dataSource={arr}
+        dataSource={taskReloaded || arr}
         renderItem={(item) => (
           <List.Item
             key={item.page_id}
@@ -98,9 +109,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               borderRadius: "8px",
               padding: "0px 10px",
               borderLeft: `5px solid ${
-                (taskReloaded && taskReloaded.completed) || item.completed
-                  ? "rgba(103, 245, 149, 1)"
-                  : "#1890ff70"
+                item.completed ? "rgba(103, 245, 149, 1)" : "#1890ff70"
               }`,
             }}
           >

@@ -47,7 +47,7 @@ function App() {
       "put",
       item
     );
-    setToggle(true);
+    // setToggle(true);
   };
 
   useEffect(() => {

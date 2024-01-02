@@ -79,7 +79,7 @@ export default function CompletedTaskRate(tasks) {
             flexDirection: "row",
             alignItems: "flex-start",
             justifyContent: "space-between",
-            paddingTop: "0px",
+            paddingTop: "0px !important",
           }}
         >
           <Progress
@@ -117,19 +117,28 @@ export default function CompletedTaskRate(tasks) {
               textAlign: "center",
               paddingLeft: "20px",
               paddingRight: "20px",
+              paddingBottom: "0px",
               background: "rgb(244, 244, 244)",
               background: "#00f1",
               background: "rgba(255,255,255,0.3)",
               border: "2px solid lightgray",
             }}
           >
-            <h5 style={{ textAlign: "left" }}>Tasks</h5>
+            <p style={{ textAlign: "left" }}>Tasks</p>
             <div style={{ display: "flex", justifyContent: "flex-start" }}>
-              <h5 style={{ paddingRight: "10px" }}>{taskCreatedToday()}</h5>
-              <p>Created</p>
+              <p style={{ paddingRight: "10px", marginTop: "0px" }}>
+                {taskCreatedToday()}
+              </p>
+              <p style={{ marginTop: "0px" }}>Created</p>
             </div>
-            <div style={{ display: "flex", justifyContent: "flex-start" }}>
-              <h5 style={{ paddingRight: "10px" }}>{completedTaskCount()}</h5>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                margin: "0px",
+              }}
+            >
+              <p style={{ paddingRight: "10px" }}>{completedTaskCount()}</p>
               <p>Completed</p>
             </div>
           </div>
