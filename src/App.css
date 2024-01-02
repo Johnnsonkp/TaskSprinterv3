@@ -189,3 +189,15 @@ aside .ant-menu-item{
     max-width: 1200px;
 
 }
+
+@media screen and (max-width: 800px){
+  .sider{
+    display: none;
+  }
+  .boilerplate-layout{
+    padding: 0px !important;
+  }
+  .CompletedTaskRate{
+    display: none !important;
+  }
+}

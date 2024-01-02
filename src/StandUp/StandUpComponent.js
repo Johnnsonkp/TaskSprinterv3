@@ -51,7 +51,7 @@ const StandUpComponentSimplified = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="standup-card" style={styles.container}>
       <Card
         title={flip ? `Daily priorities` : `Daily priorities`}
         bordered={true}

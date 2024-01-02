@@ -112,7 +112,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
             className="taskList"
             style={{
               backgroundColor: item.completed
-                ? "rgba(103, 245, 149, 0.4)"
+                ? "rgba(0, 200, 117, 0.1)"
                 : "rgba(140, 140, 140, 0.15)",
               margin: "8px",
               borderRadius: "8px",
