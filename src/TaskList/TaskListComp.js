@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { Button, Drawer } from "antd";
+import { Button, Collapse, Divider, Drawer, Space } from "antd";
 import {
   CheckCircleOutlined,
   CloseSquareOutlined,
@@ -10,9 +10,11 @@ import { Radio, Tabs } from "antd";
 import { getData, postData } from "../Services/NotionAPI/useFetchData";
 import { useEffect, useState } from "react";
 
+import CustomDivider from "../components/ui.components/CustomDivider";
 import DefaultForm from "../Form/DefaultForm";
 import { List } from "antd";
 import React from "react";
+import StatusTab from "../components/ui.components/StatusTab";
 import { reformatDate } from "../Helper/DateFormat";
 import { removeData } from "../Services/NotionAPI/useFetchData";
 
@@ -86,6 +88,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
 
   return (
     <div
+      id="taskliskContainer"
       style={{
         textAlign: "left",
       }}
@@ -124,46 +127,81 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
           >
             <List.Item.Meta
               style={{
-                marginRight: "15px",
+                // marginRight: "15px",
+                // width: "90%",
+                textAlign: "left",
+                flex: 1.8,
               }}
               avatar={
-                <CheckCircleOutlined
-                  style={{
-                    color: item.completed
-                      ? "rgba(103, 245, 149, 1)"
-                      : "#1890ff70",
-                    fontSize: "28px",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => TaskCompleteClicked(item)}
-                />
+                <span style={{ display: "flex" }}>
+                  <CheckCircleOutlined
+                    style={{
+                      color: item.completed
+                        ? "rgba(103, 245, 149, 1)"
+                        : "#1890ff70",
+                      fontSize: "28px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => TaskCompleteClicked(item)}
+                  />
+                  <span className="customDivider">
+                    <CustomDivider className="customDivider" />
+                  </span>
+                </span>
               }
               title={
-                <a style={{ fontSize: "12px", alignItems: "center" }}>
+                <a
+                  className="tasklistTitle"
+                  style={{ fontSize: "12px", alignItems: "center" }}
+                >
                   {item.name}
                 </a>
               }
             />
-            {item.subtasks && <MessageOutlined />}
-            <div style={{ marginLeft: "13px", marginRight: "13px" }}></div>
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
+            {item.subtasks && <MessageOutlined className="customDivider" />}
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
+
             <button
+              className="expandBtn"
               style={{ cursor: "pointer" }}
               onClick={() => selectedTask(item)}
             >
               Expand
             </button>
-            <div style={{ marginLeft: "12px", marginRight: "13px" }}></div>
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
             <List.Item.Meta
+              className="tasklistDate"
               style={{}}
               title={
                 item.date.start && (
-                  <a style={{ fontWeight: "thin", fontSize: "13px" }}>
-                    Due: [ {reformatDate(item.date.start, "dd/MM - h:mm bbbb")}{" "}
-                    ]
+                  <a
+                    style={{
+                      fontWeight: "thin",
+                      fontSize: "13px",
+                      fontWeight: "normal",
+                    }}
+                  >
+                    Due: {reformatDate(item.date.start, "dd/MM - h:mm bbbb")}{" "}
                   </a>
                 )
               }
             />
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
+            <span className="statusTab">
+              <StatusTab />
+            </span>
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
             <CloseSquareOutlined
               style={{
                 color: "red",
