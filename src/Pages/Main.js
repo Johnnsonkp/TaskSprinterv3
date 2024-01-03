@@ -16,7 +16,19 @@ import { getData } from "../Services/NotionAPI/useFetchData";
 export default function Main({ taskArr, handleDelete, UpdateTask }) {
   const [tasksContainer, setTasksContainer] = useState();
   const [open, setOpen] = useState(false);
-  const [completedTask, setCompletedTask] = useState();
+  const [completedTask, setCompletedTask] = useState(
+    taskArr && taskArr.filter((singleTask) => singleTask.completed === true)
+  );
+  const [activeTask, setActiveTask] = useState();
+
+  useEffect(() => {
+    setActiveTask(
+      taskArr && taskArr.filter((singleTask) => singleTask.completed === false)
+    );
+    setCompletedTask(
+      taskArr && taskArr.filter((singleTask) => singleTask.completed === true)
+    );
+  }, [taskArr]);
 
   const onClose = () => {
     setOpen(false);
@@ -30,7 +42,7 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       label: "All Tasks",
       children: (
         <TaskListIndex
-          task={taskArr}
+          task={(activeTask && activeTask.concat(completedTask)) || taskArr}
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
         />

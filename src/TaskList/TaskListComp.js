@@ -23,6 +23,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   const [open, setOpen] = useState(false);
   const [selectTask, setSelectTask] = useState();
   const [taskReloaded, setTaskReloaded] = useState();
+  const [completedTasks, setCompletedTasks] = useState();
   const [taskComplete, setTaskComplete] = useState(false);
   const [toggleTaskComletion, setToggleTaskCompletion] = useState(false);
 
@@ -80,11 +81,13 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
           "https://tsv3-server-production.up.railway.app/fetchNotionData",
           "get"
         );
-        setTaskReloaded(res);
+        // setTaskReloaded(res);
+        setTaskReloaded(res.filter((task) => task.completed === false));
+        setCompletedTasks(res.filter((task) => task.completed === true));
       }
       setToggle(false);
     }
-  }, [TaskCompleteClicked]);
+  }, [TaskCompleteClicked, taskReloaded]);
 
   return (
     <div
@@ -108,7 +111,9 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         style={{
           cursor: "pointer",
         }}
-        dataSource={taskReloaded || arr}
+        dataSource={
+          (taskReloaded && taskReloaded.concat(completedTasks)) || arr
+        }
         renderItem={(item) => (
           <List.Item
             key={item.page_id}
