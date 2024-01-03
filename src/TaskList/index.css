@@ -2,3 +2,37 @@
     background-color: #fff !important;
     border: 1px solid lightblue;
 }
+:where(.css-dev-only-do-not-override-p7e5j5).ant-list .ant-list-item .ant-list-item-meta .ant-list-item-meta-avatar {
+    margin-inline-end: 0px;
+}
+
+@media screen and (max-width: 530px){
+    /* #taskliskContainer .expandBtn{
+        display: none;
+    } */
+    #taskliskContainer .tasklistDate{
+        display: none;
+    }
+    #taskliskContainer .customDivider, .statusTab, .tasklistDate{
+        display: none;
+    }
+    :where(.css-dev-only-do-not-override-p7e5j5).ant-list .ant-list-item {
+        flex-wrap: no-wrap;
+    }
+    #taskliskContainer .ant-spin-container ul li div, span{
+        /* margin-left: 1px !important; */
+        margin-Right: 3px !important;
+        /* border: 1px solid red; */
+    }
+    #taskliskContainer .tasklistTitle{
+        font-size: 11px !important;
+    }
+    .ant-list-item.taskList{
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    #taskliskContainer .expandBtn{
+        font-size: 10px;
+        margin-Right: 4px !important;
+    }
+}
