@@ -17,6 +17,7 @@
     }
     .standupSimplified .ant-card{
       margin: auto !important;
+      
     }
     .standup-card .ant-card-bordered.css-dev-only-do-not-override-p7e5j5{
       min-width: 80% !important;
@@ -28,6 +29,7 @@
     .standupSimplified .ant-card label Button {
       top: 0 !important; 
       left: 0 !important;
+      /* border: 1px solid red; */
   }
   .standupSimplified .ant-card-body{
     padding-left: 0px;

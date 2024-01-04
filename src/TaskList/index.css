@@ -19,10 +19,8 @@
     :where(.css-dev-only-do-not-override-p7e5j5).ant-list .ant-list-item {
         flex-wrap: no-wrap;
     }
-    #taskliskContainer .ant-spin-container ul li div, span{
-        /* margin-left: 1px !important; */
+    .ant-list-item-meta-avatar svg {
         margin-Right: 3px !important;
-        /* border: 1px solid red; */
     }
     #taskliskContainer .tasklistTitle{
         font-size: 11px !important;
