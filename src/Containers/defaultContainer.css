@@ -21,6 +21,9 @@
     .standup-card .ant-card-bordered.css-dev-only-do-not-override-p7e5j5{
       min-width: 80% !important;
       width: 80% !important;
+      /* border: 1px solid red; */
+      min-width: 380px !important;
+      max-width: 410px !important;
     }
     .standupSimplified .ant-card label Button {
       top: 0 !important; 
@@ -29,6 +32,19 @@
   .standupSimplified .ant-card-body{
     padding-left: 0px;
     padding-right: 0px;
+  }
+  .standupSimplified .standup-card{
+    background: none !important;
+  }
+  .standupSimplified .ant-card-body input{
+    font-size: 11px;
+  }
+  .front div {
+    display: flex;
+    /* border: 1px solid red; */
+  }
+  #taskliskContainer .ant-list-items li{
+    height: 50px !important;
   }
 }
 
