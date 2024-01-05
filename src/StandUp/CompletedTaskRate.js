@@ -6,7 +6,9 @@ import { styles } from "./standUp.styles";
 
 const customStyles = { styles };
 
-export default function CompletedTaskRate(tasks) {
+export default function CompletedTaskRate({ taskArr }) {
+  console.log("taskArr", taskArr);
+  // let taskArray = taskArr;
   const styles = {
     card: {
       boxShadow: "rgba(0, 0, 0, 0.24) 0px 6px 12px 0px",
@@ -15,30 +17,38 @@ export default function CompletedTaskRate(tasks) {
       padding: "0px !important",
     },
   };
-  const completedTaskCount = (tasks) => {
+  const completedTaskCount = (taskArray) => {
     let counter = 0;
     {
-      tasks &&
-        tasks.map((task) =>
-          task.completed === true &&
-          reformatDate(task.date.start || task.date_created, "dd/MM/yyyy") ===
-            reformatDate(Date.now(), "dd/MM/yyyy")
-            ? counter++
-            : null
-        );
+      // taskArr &&
+      //   taskArr.map((task) =>
+      //     task.completed === true &&
+      //     reformatDate(task.date.start || task.date_created, "dd/MM/yyyy") ===
+      //       reformatDate(Date.now(), "dd/MM/yyyy")
+      //       ? counter++
+      //       : null
+      //   );
+      // console.log("taskarr", taskArr);
+      taskArr &&
+        taskArr.map((task) => (task.completed === true ? counter++ : null));
+
       return parseInt(counter);
     }
   };
-  const taskCreatedToday = (tasks) => {
+  const taskCreatedToday = () => {
     let counter = 0;
     {
-      tasks &&
-        tasks.map((task) =>
-          reformatDate(task.date.start || task.date_created, "dd/MM/yyyy") ===
-          reformatDate(Date.now(), "dd/MM/yyyy")
-            ? counter++
-            : null
-        );
+      // taskArr &&
+      //   taskArr.map((task) =>
+      //     reformatDate(
+      //       task.date_created.start || task.date.start || task.date,
+      //       "dd/MM/yyyy"
+      //     ) === reformatDate(Date.now(), "dd/MM/yyyy")
+      //       ? counter++
+      //       : counter++
+      //   );
+
+      taskArr && taskArr.map((task, index) => counter++);
       return parseInt(counter);
     }
   };
@@ -80,6 +90,7 @@ export default function CompletedTaskRate(tasks) {
             // alignItems: "flex-start",
             justifyContent: "space-between",
             marginTop: "-15px",
+            background: "transparent",
           }}
         >
           <Progress
@@ -89,7 +100,7 @@ export default function CompletedTaskRate(tasks) {
               completedTaskCount(),
               taskCreatedToday()
             )}
-            width={"100px"}
+            size={130}
             strokeColor={
               completedPercentage(completedTaskCount(), taskCreatedToday()) >=
               80
@@ -103,8 +114,9 @@ export default function CompletedTaskRate(tasks) {
             }
             trailColor={"#9996"}
             style={{
-              border: "2px solid blue",
+              // border: "2px solid blue",
               background: "rgba(255,255,255,0.3)",
+              background: "transparent",
               paddingTop: "10px",
               paddingBottom: "10px",
               paddingLeft: "10px",

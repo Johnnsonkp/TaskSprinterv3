@@ -89,7 +89,15 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
   ];
   return (
     <>
-      <DefaultContainer content={<StandUpMenu />} />
+      <DefaultContainer
+        content={
+          <StandUpMenu
+            taskArr={
+              (activeTask && activeTask.concat(completedTask)) || taskArr
+            }
+          />
+        }
+      />
       <DefaultContainer
         content={
           <Tabs

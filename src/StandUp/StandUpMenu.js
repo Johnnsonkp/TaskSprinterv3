@@ -3,7 +3,7 @@ import "./standup.css";
 import CompletedTaskRate from "./CompletedTaskRate";
 import StandUpComponentSimplified from "./StandUpComponent";
 
-export function StandUpMenu() {
+export function StandUpMenu({ taskArr }) {
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ export function StandUpMenu() {
         <StandUpComponentSimplified />
       </span>
       <span className="CompletedTaskRate">
-        <CompletedTaskRate />
+        <CompletedTaskRate taskArr={taskArr} />
       </span>
     </div>
   );
