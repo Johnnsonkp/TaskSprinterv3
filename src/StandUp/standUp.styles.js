@@ -57,7 +57,7 @@ export const styles = {
     paddingBottom: "0px",
     marginTop: "5px",
     marginBottom: "0px",
-    border: "1px solid #999",
+    border: "1px solid rgba(153, 153, 153, 0.3)",
     width: "100%",
     borderRadius: "5px",
   },

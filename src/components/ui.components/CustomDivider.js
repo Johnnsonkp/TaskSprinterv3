@@ -7,7 +7,7 @@ export default function CustomDivider() {
         dashed
         type="vertical"
         style={{
-          border: "1px solid lightGray",
+          border: "1px solid #e6e6e6",
         }}
       />
     </div>

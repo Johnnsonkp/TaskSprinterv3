@@ -1,21 +1,20 @@
-import { Button, Form, Input, Radio } from "antd";
+import { Button, Form, Input } from "antd";
 import { Col, InputNumber, Row } from "antd";
-import { DatePicker, Space } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
+import { DatePicker } from "antd";
 import { PlusCircleFilled } from "@ant-design/icons";
-import dayjs from "dayjs";
-import { postData } from "../Services/NotionAPI/useFetchData";
 import { reformatDate } from "../Helper/DateFormat";
 
-export default function DefaultForm({ formTitle, task }) {
+export default function DefaultForm({ formTitle, task, UpdateTask }) {
   const [form] = Form.useForm();
   const { RangePicker } = DatePicker;
   const [formInputs, setFormInputs] = useState({
-    name: "",
-    subtasks: "",
-    completed: false,
-    date_created: {},
+    name: task.name,
+    subtasks: task.subtasks,
+    completed: task.completed,
+    page_id: task.page_id,
+    date_created: task.date_created,
   });
   const handleDateChangeFunc = (e) => {
     setFormInputs({
@@ -32,54 +31,29 @@ export default function DefaultForm({ formTitle, task }) {
       [e.target.name]: e.target.value,
     });
   };
+  async function HandleTaskUpdate() {
+    const taskItem = formInputs;
+    UpdateTask(taskItem);
+  }
+  function refreshAfter2Seconds() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    });
+  }
   function onSubmit(e) {
     e.preventDefault();
-    console.log("formInputs", formInputs);
     form.resetFields();
-    submitFormToNotion();
+    HandleTaskUpdate();
+    refreshAfter2Seconds();
   }
-  async function submitFormToNotion() {
-    // const sendPost = await postData(
-    //   "http://localhost:5000/updateNotionData",
-    //   "patch",
-    //   {
-    //     name: formInputs.name,
-    //     completed: formInputs.completed,
-    //     subtasks: formInputs.subtasks,
-    //     date_created: formInputs.date_created,
-    //   }
-    // );
-    // sendPost();
 
-    try {
-      const response = await fetch("http://localhost:5000/updateNotionData", {
-        method: "put",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          mode: "no-cors",
-        },
-        body: JSON.stringify({
-          name: formInputs.name,
-          completed: formInputs.completed,
-          subtasks: formInputs.subtasks,
-          date_created: formInputs.date_created,
-          page_id: task.page_id,
-        }),
-      });
-      const data = await response.json();
-      console.log("Success", response);
-      return data;
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
   return (
     <>
       <Form
         style={{ paddingBottom: "15px" }}
         form={form}
-        // onFinish={onFinish}
         layout="horizontal"
         className="task-form hideForm"
       >
@@ -93,7 +67,6 @@ export default function DefaultForm({ formTitle, task }) {
               <Input
                 onChange={(e) => handleChangeFunc(e)}
                 name={"name"}
-                // placeholder={task.name && task.name}
                 defaultValue={task.name && task.name}
               />
             </Form.Item>
@@ -101,7 +74,6 @@ export default function DefaultForm({ formTitle, task }) {
               <Input.TextArea
                 onChange={(e) => handleChangeFunc(e)}
                 name={"subtasks"}
-                // placeholder="Task Description"
                 defaultValue={task.subtasks && task.subtasks}
               />
             </Form.Item>
@@ -113,9 +85,6 @@ export default function DefaultForm({ formTitle, task }) {
                 showTime
                 showNow
                 showToday
-                // defaultValue={task.date_created && task.date_created}
-                // defaultValue={dayjs("2023-01-01")}
-                // defaultValue={task.date_created}
                 onChange={(e) => handleDateChangeFunc(e)}
               />
             </Form.Item>
@@ -130,14 +99,11 @@ export default function DefaultForm({ formTitle, task }) {
               <InputNumber
                 min={1}
                 max={10}
-                // defaultValue={null}
                 style={{ width: "100%", float: "left" }}
                 keyboard={false}
                 bordered={true}
                 controls={true}
                 size={"medium"}
-                // value={order}
-                // onChange={setOrder}
               />
             </Form.Item>
           </Col>

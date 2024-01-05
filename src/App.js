@@ -6,8 +6,10 @@ import { useCallback, useEffect, useState } from "react";
 
 import { DefaultContainer } from "./Containers/DefaultContainer";
 import Main from "./Pages/Main";
+import { Navigate } from "react-router-dom";
 import { defaultObj } from "./DefaultData/DefaultJSON";
 import { getData } from "./Services/NotionAPI/useFetchData";
+import { navigate } from "./Helper/navRef";
 import { removeData } from "./Services/NotionAPI/useFetchData";
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
       "https://tsv3-server-production.up.railway.app/fetchNotionData",
       "get"
     );
+    console.log("fetchData useCallback:", fetchData);
     setTaskArr(fetchData);
   }, []);
 
@@ -47,13 +50,18 @@ function App() {
       "put",
       item
     );
-    // setToggle(true);
+    console.log("app.js:", item);
+    // navigate("Main");
+    // window.location.reload();
+    setToggle(true);
   };
 
   useEffect(() => {
     if (toggle) {
-      reload();
-      setToggle(false);
+      setTimeout(() => {
+        reload();
+        setToggle(false);
+      }, [800]);
     }
   }, [toggle]);
 
@@ -72,7 +80,7 @@ function App() {
         content={<h2 style={{ textAlign: "left" }}>Main WorkSpace</h2>}
       />
       <Main
-        taskArr={taskArr}
+        taskArr={taskArr || defaultObj}
         handleDelete={DeleteTask}
         UpdateTask={UpdateTask}
       />
