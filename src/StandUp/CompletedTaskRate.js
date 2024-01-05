@@ -77,9 +77,9 @@ export default function CompletedTaskRate(tasks) {
           style={{
             display: "flex",
             flexDirection: "row",
-            alignItems: "flex-start",
+            // alignItems: "flex-start",
             justifyContent: "space-between",
-            paddingTop: "0px !important",
+            marginTop: "-15px",
           }}
         >
           <Progress

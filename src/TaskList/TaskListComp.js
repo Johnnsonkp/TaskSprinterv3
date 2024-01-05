@@ -12,11 +12,15 @@ import { useEffect, useState } from "react";
 
 import CustomDivider from "../components/ui.components/CustomDivider";
 import DefaultForm from "../Form/DefaultForm";
+import { InputNumber } from "antd";
 import { List } from "antd";
 import React from "react";
 import StatusTab from "../components/ui.components/StatusTab";
 import { reformatDate } from "../Helper/DateFormat";
-import { removeData } from "../Services/NotionAPI/useFetchData";
+
+const onChange = (value) => {
+  console.log("changed", value);
+};
 
 export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   const [toggle, setToggle] = useState(false);
@@ -38,8 +42,9 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   }
 
   let arr = [];
-  task.forEach((singleTask) => {
+  task.forEach((singleTask, index) => {
     arr.push({
+      key: index,
       name: singleTask.name,
       subtasks: singleTask.subtasks,
       date: singleTask.date || singleTask.date_created,
@@ -54,13 +59,8 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
     setToggle(true);
   }
   const onTaskDelete = (item) => {
-    console.log("taskReloaded", taskReloaded);
-    setTaskReloaded(
-      taskReloaded
-        ? taskReloaded.filter((oldData) => oldData !== item)
-        : arr.filter((oldData) => oldData !== item)
-    );
     handleDelete(item);
+    setToggle(true);
   };
 
   useEffect(() => {
@@ -81,7 +81,6 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
           "https://tsv3-server-production.up.railway.app/fetchNotionData",
           "get"
         );
-        // setTaskReloaded(res);
         setTaskReloaded(res.filter((task) => task.completed === false));
         setCompletedTasks(res.filter((task) => task.completed === true));
       }
@@ -104,7 +103,11 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         open={open}
       >
         {open && selectTask.name ? (
-          <DefaultForm formTitle={"Update Task"} task={selectTask} />
+          <DefaultForm
+            formTitle={"Update Task"}
+            task={selectTask}
+            UpdateTask={UpdateTask}
+          />
         ) : null}
       </Drawer>
       <List
@@ -114,16 +117,16 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         dataSource={
           (taskReloaded && taskReloaded.concat(completedTasks)) || arr
         }
-        renderItem={(item) => (
+        renderItem={(item, index) => (
           <List.Item
-            key={item.page_id}
+            key={index}
             className="taskList"
             style={{
               backgroundColor: item.completed
                 ? "rgba(0, 200, 117, 0.1)"
                 : "rgba(140, 140, 140, 0.15)",
               margin: "8px",
-              borderRadius: "8px",
+              borderRadius: "5px",
               padding: "0px 10px",
               borderLeft: `5px solid ${
                 item.completed ? "rgba(103, 245, 149, 1)" : "#1890ff70"
@@ -132,8 +135,6 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
           >
             <List.Item.Meta
               style={{
-                // marginRight: "15px",
-                // width: "90%",
                 textAlign: "left",
                 flex: 1.8,
               }}
@@ -149,9 +150,20 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                     }}
                     onClick={() => TaskCompleteClicked(item)}
                   />
-                  <span className="customDivider">
-                    <CustomDivider className="customDivider" />
-                  </span>
+                  <InputNumber
+                    min={1}
+                    max={10}
+                    defaultValue={0}
+                    onChange={onChange}
+                    size={"small"}
+                    width={"2px"}
+                    style={{
+                      width: "40px",
+                      background: "transparent",
+                      marginRight: "5px",
+                      marginLeft: "5px",
+                    }}
+                  />
                 </span>
               }
               title={
@@ -181,29 +193,35 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
             <span className="customDivider">
               <CustomDivider className="customDivider" />
             </span>
+            <span className="statusTab">
+              <StatusTab style={{ background: "transparent" }} />
+            </span>
+            <span className="customDivider">
+              <CustomDivider className="customDivider" />
+            </span>
             <List.Item.Meta
               className="tasklistDate"
               style={{}}
               title={
                 item.date.start && (
-                  <a
-                    style={{
-                      fontWeight: "thin",
-                      fontSize: "13px",
-                      fontWeight: "normal",
-                    }}
+                  <button
+                    style={{ border: "1px solid lightGray" }}
+                    onClick={(event) => event.preventDefault()}
                   >
-                    Due: {reformatDate(item.date.start, "dd/MM - h:mm bbbb")}{" "}
-                  </a>
+                    <a
+                      style={{
+                        fontWeight: "thin",
+                        fontSize: "13px",
+                        fontWeight: "normal",
+                        color: "#333",
+                      }}
+                    >
+                      Due: {reformatDate(item.date.start, "dd/MM - h:mm bbbb")}{" "}
+                    </a>
+                  </button>
                 )
               }
             />
-            <span className="customDivider">
-              <CustomDivider className="customDivider" />
-            </span>
-            <span className="statusTab">
-              <StatusTab />
-            </span>
             <span className="customDivider">
               <CustomDivider className="customDivider" />
             </span>
@@ -214,7 +232,6 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 cursor: "pointer",
                 border: "1px solid red",
               }}
-              // onClick={() => handleDelete(item)}
               onClick={() => onTaskDelete(item)}
             />
           </List.Item>

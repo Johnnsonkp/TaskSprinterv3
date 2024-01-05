@@ -1,4 +1,4 @@
-import { Button, Collapse, Select, Space } from "antd";
+import { Select } from "antd";
 
 export default function StatusTab() {
   const handleChange = (value) => {
@@ -9,11 +9,12 @@ export default function StatusTab() {
       size={"small"}
       defaultValue="Status"
       removeIcon={true}
-      optionFontSize={10}
+      fontSize={1}
+      optionFontSize={1}
       style={{
-        width: 90,
-        fontSize: "12px",
-        backgroundColor: "transparent !important",
+        width: 120,
+        fontSize: "1px",
+        background: "transparent !important",
       }}
       onChange={handleChange}
       options={[

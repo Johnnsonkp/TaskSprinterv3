@@ -43,6 +43,7 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       children: (
         <TaskListIndex
           task={(activeTask && activeTask.concat(completedTask)) || taskArr}
+          // task={taskArr}
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
         />
@@ -53,7 +54,11 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       label: "Completed Tasks",
       children: (
         <TaskListIndex
-          task={taskArr.filter((singleTask) => singleTask.completed === true)}
+          // task={taskArr}
+          task={
+            taskArr.filter((singleTask) => singleTask.completed === true) ||
+            taskArr
+          }
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
         />
