@@ -27,18 +27,20 @@ export default function Nav() {
           <AppLogoContainer />
         </div>
         <Link to={"/"}></Link>
-        {/* <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        items={["1", "2", "3", "4"]}
-        style={{
-          flex: 1,
-          minWidth: 0,
-        }}
-      /> */}
-
-        <div>
+        <div
+          style={{
+            border: "2px solid rgba(140, 140, 140, 0.3)",
+            borderRadius: "10px",
+            paddingLeft: "12px",
+            paddingRight: "12px",
+            height: "60px",
+            marginTop: "auto",
+            marginBottom: "auto",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+        >
           <Clock />
         </div>
       </Header>

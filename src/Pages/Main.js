@@ -1,17 +1,12 @@
-import { Button, Radio, Tabs } from "antd";
+import { Button, Tabs } from "antd";
 import { useEffect, useState } from "react";
 
-import { BASE_URL } from "../Helper/environment";
 import { DefaultContainer } from "../Containers/DefaultContainer";
 import { Drawer } from "antd";
 import React from "react";
-import StandUpComponent from "../StandUp/StandUpComp";
-import StandUpComponentSimplified from "../StandUp/StandUpComponent";
 import { StandUpMenu } from "../StandUp/StandUpMenu";
 import TaskForm from "../Form/TaskForm";
 import TaskListIndex from "../TaskList";
-import { defaultObj } from "../DefaultData/DefaultJSON";
-import { getData } from "../Services/NotionAPI/useFetchData";
 
 export default function Main({ taskArr, handleDelete, UpdateTask }) {
   const [tasksContainer, setTasksContainer] = useState();
@@ -43,7 +38,6 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       children: (
         <TaskListIndex
           task={(activeTask && activeTask.concat(completedTask)) || taskArr}
-          // task={taskArr}
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
         />
@@ -54,7 +48,6 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       label: "Completed Tasks",
       children: (
         <TaskListIndex
-          // task={taskArr}
           task={
             taskArr.filter((singleTask) => singleTask.completed === true) ||
             taskArr

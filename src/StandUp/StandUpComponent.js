@@ -53,10 +53,12 @@ const StandUpComponentSimplified = () => {
   return (
     <div className="standup-card" style={styles.container}>
       <Card
-        title={flip ? `Daily priorities` : `Daily priorities`}
+        title={flip ? `Daily Priorities (Max 3)` : `Daily Priorities (Max 3)`}
         bordered={true}
         style={{
-          minWidth: 480,
+          minWidth: 400,
+          // minWidth: 400,
+          width: 480,
           minHeight: 230.14,
           maxHeight: 230.14,
           textAlign: "left",
