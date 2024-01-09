@@ -41,7 +41,6 @@ function App() {
       item
     );
     reload();
-    // setToggle(true);
   };
 
   const UpdateTask = (item) => {
@@ -51,8 +50,6 @@ function App() {
       item
     );
     console.log("app.js:", item);
-    // navigate("Main");
-    // window.location.reload();
     setToggle(true);
   };
 
@@ -76,9 +73,6 @@ function App() {
 
   return (
     <div className="App">
-      <DefaultContainer
-        content={<h2 style={{ textAlign: "left" }}>Main WorkSpace</h2>}
-      />
       <Main
         taskArr={taskArr || defaultObj}
         handleDelete={DeleteTask}

@@ -12,7 +12,7 @@ export default function StatusTab() {
       fontSize={1}
       optionFontSize={1}
       style={{
-        width: 120,
+        width: 100,
         fontSize: "1px",
         background: "transparent !important",
       }}

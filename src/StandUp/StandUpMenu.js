@@ -9,7 +9,6 @@ export function StandUpMenu({ taskArr }) {
       style={{
         display: "flex",
         justifyContent: "space-around",
-        // border: "1px solid red",
         border: "2px solid lightblue",
         borderRadius: "15px",
         padding: "0px 10px",

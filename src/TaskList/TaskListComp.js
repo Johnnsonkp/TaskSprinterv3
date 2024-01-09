@@ -136,7 +136,10 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
             <List.Item.Meta
               style={{
                 textAlign: "left",
-                flex: 1.8,
+                flex: 2.8,
+                // border: "1px solid red",
+                display: "flex",
+                alignItems: "center",
               }}
               avatar={
                 <span style={{ display: "flex" }}>
@@ -148,6 +151,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                       fontSize: "28px",
                       cursor: "pointer",
                     }}
+                    className="checkCircleOutlined"
                     onClick={() => TaskCompleteClicked(item)}
                   />
                   <InputNumber
@@ -163,13 +167,18 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                       marginRight: "5px",
                       marginLeft: "5px",
                     }}
+                    className="inputNumber"
                   />
                 </span>
               }
               title={
                 <a
                   className="tasklistTitle"
-                  style={{ fontSize: "12px", alignItems: "center" }}
+                  style={{
+                    fontSize: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
                 >
                   {item.name}
                 </a>
@@ -179,9 +188,10 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <CustomDivider className="customDivider" />
             </span>
             {item.subtasks && <MessageOutlined className="customDivider" />}
-            <span className="customDivider">
+            <span style={{ width: "10px" }}></span>
+            {/* <span className="customDivider">
               <CustomDivider className="customDivider" />
-            </span>
+            </span> */}
 
             <button
               className="expandBtn"
@@ -226,6 +236,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <CustomDivider className="customDivider" />
             </span>
             <CloseSquareOutlined
+              className="CloseSquareOutlined"
               style={{
                 color: "red",
                 fontSize: "25px",

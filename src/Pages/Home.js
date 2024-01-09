@@ -8,17 +8,35 @@ export default function Home() {
         backgroundSize: "cover",
         width: "100%",
         height: "85vh",
+        position: "relative",
       }}
     >
-      <Clock
+      <div
         style={{
           color: "#333",
           position: "absolute",
           top: "10%",
           fontSize: "50rem",
-          border: "1px solid red",
+          border: "5px solid white",
+
+          margin: "auto",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          width: "200px",
+          height: "50%",
+          fontSize: "30px !important",
+          zIndex: 9000,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "20px",
         }}
-      />
+      >
+        <Clock />
+      </div>
     </div>
   );
 }

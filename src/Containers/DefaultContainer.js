@@ -1,17 +1,21 @@
 import "./defaultContainer.css";
-export const DefaultContainer = ({ content }) => {
+export const DefaultContainer = (props) => {
   return (
     <div
       className="defaultContainer"
-      style={{
-        width: "90%",
-        marginLeft: "auto",
-        marginRight: "auto",
-        marginTop: "20px",
-        marginBottom: "20px",
-      }}
+      style={
+        props.style
+          ? props.style
+          : {
+              width: "95%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "20px",
+              marginBottom: "20px",
+            }
+      }
     >
-      {content}
+      {props.content}
     </div>
   );
 };
