@@ -22,6 +22,7 @@ function App() {
       "get"
     );
     setTaskArr(fetchData);
+    console.log("loadData:", fetchData);
   }
 
   const reload = useCallback(async () => {
@@ -40,7 +41,7 @@ function App() {
       "put",
       item
     );
-    reload();
+    // reload();
   };
 
   const UpdateTask = (item) => {
@@ -50,7 +51,7 @@ function App() {
       item
     );
     console.log("app.js:", item);
-    setToggle(true);
+    // setToggle(true);
   };
 
   useEffect(() => {

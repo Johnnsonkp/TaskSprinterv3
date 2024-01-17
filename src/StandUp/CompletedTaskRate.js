@@ -1,6 +1,7 @@
 import { Button, Card, Progress } from "antd";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
-import React from "react";
 import { reformatDate } from "../Helper/DateFormat";
 import { styles } from "./standUp.styles";
 
@@ -121,7 +122,10 @@ export default function CompletedTaskRate({ taskArr }) {
                 margin: "0px",
               }}
             >
-              <p style={{ paddingRight: "10px" }}>{completedTaskCount()}</p>
+              <p style={{ paddingRight: "10px" }}>
+                {/* <AnimatedNumbers value={completedTaskCount()} /> */}
+                {completedTaskCount()}
+              </p>
               <p>Completed</p>
             </div>
           </div>
