@@ -4,16 +4,14 @@ import * as React from "react";
 
 import { useCallback, useEffect, useState } from "react";
 
-import { DefaultContainer } from "./Containers/DefaultContainer";
+import LoadSpiner from "./components/ui.components/loadSpiner/loadSpiner";
 import Main from "./Pages/Main";
-import { Navigate } from "react-router-dom";
 import { defaultObj } from "./DefaultData/DefaultJSON";
 import { getData } from "./Services/NotionAPI/useFetchData";
-import { navigate } from "./Helper/navRef";
 import { removeData } from "./Services/NotionAPI/useFetchData";
 
 function App() {
-  const [taskArr, setTaskArr] = useState(defaultObj);
+  const [taskArr, setTaskArr] = useState();
   const [toggle, setToggle] = useState(false);
 
   async function loadData() {
@@ -22,7 +20,6 @@ function App() {
       "get"
     );
     setTaskArr(fetchData);
-    console.log("loadData:", fetchData);
   }
 
   const reload = useCallback(async () => {
@@ -31,7 +28,6 @@ function App() {
       "https://tsv3-server-production.up.railway.app/fetchNotionData",
       "get"
     );
-    console.log("fetchData useCallback:", fetchData);
     setTaskArr(fetchData);
   }, []);
 
@@ -41,7 +37,6 @@ function App() {
       "put",
       item
     );
-    // reload();
   };
 
   const UpdateTask = (item) => {
@@ -50,8 +45,6 @@ function App() {
       "put",
       item
     );
-    console.log("app.js:", item);
-    // setToggle(true);
   };
 
   useEffect(() => {
@@ -74,11 +67,15 @@ function App() {
 
   return (
     <div className="App">
-      <Main
-        taskArr={taskArr || defaultObj}
-        handleDelete={DeleteTask}
-        UpdateTask={UpdateTask}
-      />
+      {taskArr ? (
+        <Main
+          taskArr={taskArr}
+          handleDelete={DeleteTask}
+          UpdateTask={UpdateTask}
+        />
+      ) : (
+        <LoadSpiner />
+      )}
     </div>
   );
 }

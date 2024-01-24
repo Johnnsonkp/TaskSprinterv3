@@ -34,14 +34,11 @@ export default function Clock(color) {
 
   return (
     <div
-      className="NavClock"
       style={{
         color: "#fff",
         fontWeight: "900",
-        fontSize: "15px",
+        fontSize: "18px",
         width: "100%",
-        letterSpacing: "0px",
-        display: "inline-block",
       }}
     >
       {clock.hours} : {clock.minutes} : {clock.seconds}

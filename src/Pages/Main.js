@@ -1,7 +1,6 @@
 import { Button, Tabs } from "antd";
 import { useEffect, useState } from "react";
 
-import { DefaultContainer } from "../Containers/DefaultContainer";
 import { Drawer } from "antd";
 import React from "react";
 import { StandUpMenu } from "../StandUp/StandUpMenu";
@@ -82,26 +81,17 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
   ];
   return (
     <>
-      <DefaultContainer
-        content={
-          <StandUpMenu
-            taskArr={
-              (activeTask && activeTask.concat(completedTask)) || taskArr
-            }
-          />
-        }
+      <StandUpMenu
+        taskArr={(activeTask && activeTask.concat(completedTask)) || taskArr}
       />
-      <DefaultContainer
-        content={
-          <Tabs
-            style={{
-              border: "2px solid lightBlue",
-              borderRadius: "15px",
-              padding: "0px 15px",
-            }}
-            items={initialItems}
-          />
-        }
+      <Tabs
+        style={{
+          borderRadius: "15px",
+          padding: "10px 20px",
+          backgroundColor: "#fff",
+          boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+        }}
+        items={initialItems}
       />
     </>
   );

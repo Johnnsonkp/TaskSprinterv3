@@ -1,16 +1,12 @@
-import Clock from "../components/clock";
+import React, { useEffect, useState } from "react";
 
-export default function Home() {
-  return (
-    <div
-      style={{
-        background: `url("/home-images/pink-back.jpg")`,
-        backgroundSize: "cover",
-        width: "100%",
-        height: "85vh",
-        position: "relative",
-      }}
-    >
+import Clock from "../components/clock";
+import LoadSpiner from "../components/ui.components/loadSpiner/loadSpiner";
+
+function Home() {
+  const [loading, setLoading] = useState(true);
+  const HomeLayout = () => {
+    return (
       <div
         style={{
           color: "#333",
@@ -37,6 +33,29 @@ export default function Home() {
       >
         <Clock />
       </div>
+    );
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
+  return (
+    <div
+      style={{
+        background: `url("/home-images/pink-back.jpg")`,
+        background: `url("/home-images/water-peace.jpg")`,
+        backgroundSize: "cover",
+        width: "100%",
+        height: "85vh",
+        position: "relative",
+        borderRadius: "20px",
+      }}
+    >
+      {loading ? <LoadSpiner /> : <HomeLayout />}
     </div>
   );
 }
+
+export default Home;

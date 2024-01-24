@@ -88,7 +88,7 @@ export default function DashboardLayout(drawerComp, AppLogo, content) {
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <Content
+          {/* <Content
             style={{
               padding: 24,
               margin: 0,
@@ -107,7 +107,8 @@ export default function DashboardLayout(drawerComp, AppLogo, content) {
               {drawerComp}
             </Drawer>
             {content}
-          </Content>
+          </Content> */}
+          {/* {content} */}
         </Layout>
       </Layout>
     </Layout>

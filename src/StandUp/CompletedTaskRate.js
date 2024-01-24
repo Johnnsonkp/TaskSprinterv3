@@ -35,7 +35,7 @@ export default function CompletedTaskRate({ taskArr }) {
       id="completed"
       style={{
         background: "rgb(198, 255, 221)",
-        marginTop: "20px",
+        marginTop: "0px",
       }}
     >
       <Card
@@ -44,12 +44,13 @@ export default function CompletedTaskRate({ taskArr }) {
         bordered={true}
         style={{
           minWidth: 480,
+          minWidth: 300,
           minHeight: 230.14,
           maxHeight: 230.14,
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           background: "#C6FFDD",
-          background: "#e5fffd",
+          // background: "#e5fffd",
           overflow: "hidden",
           padding: "0px !important",
           opacity: 1,
@@ -61,7 +62,7 @@ export default function CompletedTaskRate({ taskArr }) {
             flexDirection: "row",
             // alignItems: "flex-start",
             justifyContent: "space-between",
-            marginTop: "-15px",
+            marginTop: "0px",
             background: "transparent",
           }}
         >
@@ -72,7 +73,7 @@ export default function CompletedTaskRate({ taskArr }) {
               completedTaskCount(),
               taskCreatedToday()
             )}
-            size={130}
+            size={120}
             strokeColor={
               completedPercentage(completedTaskCount(), taskCreatedToday()) >=
               80
@@ -80,13 +81,12 @@ export default function CompletedTaskRate({ taskArr }) {
                 : completedPercentage(
                     completedTaskCount(),
                     taskCreatedToday()
-                  ) > 50
+                  ) >= 50
                 ? "orange"
                 : "red"
             }
             trailColor={"#9996"}
             style={{
-              // border: "2px solid blue",
               background: "rgba(255,255,255,0.3)",
               background: "transparent",
               paddingTop: "10px",
@@ -97,56 +97,55 @@ export default function CompletedTaskRate({ taskArr }) {
           />
           <div
             style={{
-              margin: "0px",
-              textAlign: "center",
-              paddingLeft: "20px",
-              paddingRight: "20px",
-              paddingBottom: "0px",
-              background: "rgb(244, 244, 244)",
-              background: "#00f1",
-              background: "rgba(255,255,255,0.3)",
-              border: "2px solid lightgray",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
-            <p style={{ textAlign: "left" }}>Tasks</p>
-            <div style={{ display: "flex", justifyContent: "flex-start" }}>
-              <p style={{ paddingRight: "10px", marginTop: "0px" }}>
-                {taskCreatedToday()}
-              </p>
-              <p style={{ marginTop: "0px" }}>Created</p>
-            </div>
             <div
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
-                margin: "0px",
+                alignItems: "flex-start",
+                border: "1px solid lightGray",
+                backgroundColor: "#fff",
+                borderRadius: "15px",
+                marginBottom: "5px",
+                paddingTop: "3px",
+                paddingBottom: "3px",
+                padding: "6px",
               }}
             >
-              <p style={{ paddingRight: "10px" }}>
-                {/* <AnimatedNumbers value={completedTaskCount()} /> */}
+              <p style={{ marginTop: "0px", margin: "0px" }}>Task Created: </p>
+              <p
+                style={{
+                  paddingLeftt: "0px",
+                  marginTop: "0px",
+                  margin: "0px",
+                  textAlign: "right",
+                }}
+              >
+                {taskCreatedToday()}
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "0px",
+                border: "1px solid lightGray",
+                backgroundColor: "#fff",
+                marginTop: "5px",
+                borderRadius: "15px",
+                padding: "3px",
+                padding: "6px",
+              }}
+            >
+              <p style={{ margin: "0px" }}>Task Completed: </p>
+              <p style={{ paddingRight: "0px", margin: "0px" }}>
                 {completedTaskCount()}
               </p>
-              <p>Completed</p>
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: "0px",
-              textAlign: "left",
-              paddingTop: "35px",
-              paddingBottom: "35px",
-              paddingLeft: "10px",
-              paddingRight: "10px",
-              background: "rgb(244, 244, 244)",
-              background: "#00f1",
-              background: "rgba(255,255,255,0.3)",
-              border: "2px solid lightgray",
-            }}
-          >
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <h5>Minutes worked</h5>
-              {/* <p>{totalTimeWorkedOnTask()} Mins</p> */}
             </div>
           </div>
         </div>

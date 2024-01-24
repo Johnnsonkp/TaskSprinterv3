@@ -65,15 +65,18 @@ aside .ant-menu-item{
 
 /* Landing page  */
 #landingPage-still{
-  /* background: linear-gradient(180deg, rgba(242, 19, 180, 0.06) 0%, rgba(108, 8, 209, 0) 33.52%), #13111C !important;
-  background: linear-gradient(327.21deg, rgba(33, 0, 75, 0.24) 3.65%, rgba(60, 0, 136, 0) 40.32%), linear-gradient(245.93deg, rgba(209, 21, 111, 0.16) 0%, rgba(209, 25, 80, 0) 36.63%), linear-gradient(147.6deg, rgba(58, 19, 255, 0) 29.79%, rgba(98, 19, 255, 0.01) 85.72%), #13111C; */
   background-color: #19191C;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   height: 85vh;
+  max-height: 600px;
   overflow: hidden;
+}
+
+.logoContainer .logo{
+  width: 150px !important;
 }
 .landing-grid-svg-image{
   width: 620px;
@@ -178,7 +181,7 @@ aside .ant-menu-item{
     justify-content: space-around;
     align-items: center;
     border: 2px solid rgb(97, 218, 251);
-    width: 85%;
+    width: 70%;
     margin-top: 30px;
     margin-right: auto;
     margin-bottom: 30px;

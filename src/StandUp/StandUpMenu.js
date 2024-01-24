@@ -8,16 +8,16 @@ export function StandUpMenu({ taskArr }) {
     <div
       style={{
         display: "flex",
-        justifyContent: "space-around",
-        border: "2px solid lightblue",
+        justifyContent: "space-between",
         borderRadius: "15px",
-        padding: "0px 10px",
-        paddingBottom: "15px",
-        background: `url("/header-background copy.svg")`,
+        marginBottom: "15px",
       }}
     >
       <span className="standupSimplified">
         <StandUpComponentSimplified />
+      </span>
+      <span className="CompletedTaskRate">
+        <CompletedTaskRate taskArr={taskArr} />
       </span>
       <span className="CompletedTaskRate">
         <CompletedTaskRate taskArr={taskArr} />

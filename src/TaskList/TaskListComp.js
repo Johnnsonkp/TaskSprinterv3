@@ -12,6 +12,7 @@ import CustomDivider from "../components/ui.components/CustomDivider";
 import DefaultForm from "../Form/DefaultForm";
 import { InputNumber } from "antd";
 import { List } from "antd";
+import LoadSpiner from "../components/ui.components/loadSpiner/loadSpiner";
 import React from "react";
 import StatusTab from "../components/ui.components/StatusTab";
 import { reformatDate } from "../Helper/DateFormat";
@@ -111,6 +112,11 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         <List
           style={{
             cursor: "pointer",
+            border: "1px solid red",
+            border: "1px solid rgba(5, 5, 5, 0.06)",
+            borderRadius: "10px",
+            padding: "5px",
+            overflow: "visible",
           }}
           dataSource={allTasksArr}
           renderItem={(item, index) => (
@@ -121,9 +127,9 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 backgroundColor: item.completed
                   ? "rgba(0, 200, 117, 0.1)"
                   : "rgba(140, 140, 140, 0.15)",
-                margin: "8px",
+                margin: "2px",
                 borderRadius: "5px",
-                padding: "0px 10px",
+                padding: "3px 10px",
                 borderLeft: `5px solid ${
                   item.completed ? "rgba(103, 245, 149, 1)" : "#1890ff70"
                 }`,
@@ -132,7 +138,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <List.Item.Meta
                 style={{
                   textAlign: "left",
-                  flex: 2.8,
+                  flex: 2.3,
                   // border: "1px solid red",
                   display: "flex",
                   alignItems: "center",
@@ -162,6 +168,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                         background: "transparent",
                         marginRight: "5px",
                         marginLeft: "5px",
+                        border: "1px solid #fff",
                       }}
                       className="inputNumber"
                     />
@@ -180,9 +187,9 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                   </a>
                 }
               />
-              <span className="customDivider">
+              {/* <span className="customDivider">
                 <CustomDivider className="customDivider" />
-              </span>
+              </span> */}
               {item.subtasks && <MessageOutlined className="customDivider" />}
               <span style={{ width: "10px" }}></span>
               <button
@@ -192,14 +199,23 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               >
                 Expand
               </button>
-              <span className="customDivider">
-                <CustomDivider className="customDivider" />
+              <span
+                className="customDivider"
+                style={{ marginLeft: "5px", marginRight: "5px" }}
+              >
+                {/* <CustomDivider className="customDivider" /> */}
               </span>
-              <span className="statusTab">
+              <span
+                className="statusTab"
+                style={{ marginLeft: "5px", marginRight: "5px" }}
+              >
                 <StatusTab style={{ background: "transparent" }} />
               </span>
-              <span className="customDivider">
-                <CustomDivider className="customDivider" />
+              <span
+                className="customDivider"
+                style={{ marginLeft: "5px", marginRight: "5px" }}
+              >
+                {/* <CustomDivider className="customDivider" /> */}
               </span>
               <List.Item.Meta
                 className="tasklistDate"
@@ -207,7 +223,10 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 title={
                   item.date.start && (
                     <button
-                      style={{ border: "1px solid lightGray" }}
+                      style={{
+                        border: "1px solid lightGray",
+                        minWidth: "180px",
+                      }}
                       onClick={(event) => event.preventDefault()}
                     >
                       <a
@@ -225,8 +244,11 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                   )
                 }
               />
-              <span className="customDivider">
-                <CustomDivider className="customDivider" />
+              <span
+                className="customDivider"
+                style={{ marginLeft: "5px", marginRight: "5px" }}
+              >
+                {/* <CustomDivider className="customDivider" /> */}
               </span>
               <CloseSquareOutlined
                 className="CloseSquareOutlined"
@@ -246,6 +268,6 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
   };
 
   {
-    return task ? <TaskListComp /> : <div>...loading spiner here</div>;
+    return task ? <TaskListComp /> : <LoadSpiner />;
   }
 }

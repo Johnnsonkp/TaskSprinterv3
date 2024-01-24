@@ -1,5 +1,3 @@
-// import "./Apps";
-
 import "./index.css";
 
 import { Button } from "antd";
@@ -18,7 +16,6 @@ export default function LandingPage() {
               content={
                 <div
                   style={{
-                    // border: "1px solid red",
                     width: "100%",
                     marginBottom: "0px",
                   }}
@@ -40,24 +37,22 @@ export default function LandingPage() {
           <div className="right landing-grid-svg-image">
             <img
               className="landing-page-image"
-              // src="/landing-logo-stack-2.png"
-              // src="/landing-page-zoomed.png"
               src="/landing-black.png"
+              alt="landing page"
             />
           </div>
         </div>
       </div>
       <div className="logoContainer">
-        <img src="/netlify-ar21.svg" />
-        <img src="/netlify-ar21.svg" />
-        <img src="/netlify-ar21.svg" />
-        <img src="/netlify-ar21.svg" />
-        {/* <img src="/netlify-ar21.svg" /> */}
-        {/* <img src="/reactLogo.svg" />
-        <img src="/node-js.svg" />
-        <img src="/netlify-ar21.svg" />
-        <img src="/notion-logo-1.svg" />
-        <img src="/railwayapp-logo-dark.svg" /> */}
+        <img src="/reactLogo.svg" className="logo" alt="reactLogo" />
+        <img src="/nodejs-icon.svg" alt="nodeLogo" />
+        <img src="/netlify-ar21.svg" className="logo" alt="netlifyLogo" />
+        <img src="/notion-logo-1.svg" className="logo" alt="notionLogo" />
+        <img
+          src="/railwayapp-logo-dark.svg"
+          className="logo"
+          alt="railwayapp Logo"
+        />
       </div>
     </>
   );
