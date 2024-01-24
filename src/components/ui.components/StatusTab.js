@@ -10,7 +10,6 @@ export default function StatusTab() {
       defaultValue="Status"
       removeIcon={true}
       fontSize={1}
-      optionFontSize={1}
       style={{
         width: 100,
         fontSize: "1px",

@@ -33,14 +33,11 @@ function SideMenu() {
           key: "/Home",
           icon: <UserOutlined style={{ fontWeight: "bold" }} />,
           label: <h4 onClick={(event) => handleLinkClick(event)}>Home</h4>,
-          darkItemBg: "red",
-          itemBg: "red",
         },
         {
           key: "/Main",
           icon: <LaptopOutlined />,
           label: <h4 onClick={(event) => handleLinkClick(event)}>Main</h4>,
-          darkItemBg: "#333",
         },
         {
           key: "/Notes",
@@ -49,7 +46,7 @@ function SideMenu() {
           disabled: true,
         },
       ]}
-      border={true}
+      border={"true"}
       theme={"light"}
     />
   );
