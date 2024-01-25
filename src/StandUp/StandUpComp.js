@@ -1,6 +1,5 @@
 import { Card, Col, Row } from "antd";
 import { Divider, List, Typography } from "antd";
-import { useEffect, useState } from "react";
 
 import React from "react";
 

@@ -58,7 +58,7 @@ aside .ant-menu-root{
 aside .ant-menu-item{
   border: 1px solid #282c3415;
   margin-top: 10px !important;
-  width: 85% !important;
+  /* width: 85% !important; */
   margin-left: auto !important;
   margin-right: auto !important;
 }

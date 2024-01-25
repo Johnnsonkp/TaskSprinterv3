@@ -27,7 +27,7 @@ export default function LandingPage() {
                     journey.
                   </p>
                   <Button className="mobile-view">
-                    <Link to={`/main`}>Start a New Project!</Link>
+                    <Link to={`/dashboard`}>Start a New Project!</Link>
                   </Button>
                 </div>
               }

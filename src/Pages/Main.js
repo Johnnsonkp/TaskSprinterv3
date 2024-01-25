@@ -8,7 +8,6 @@ import TaskForm from "../Form/TaskForm";
 import TaskListIndex from "../TaskList";
 
 export default function Main({ taskArr, handleDelete, UpdateTask }) {
-  const [tasksContainer, setTasksContainer] = useState();
   const [open, setOpen] = useState(false);
   const [completedTask, setCompletedTask] = useState(
     taskArr && taskArr.filter((singleTask) => singleTask.completed === true)

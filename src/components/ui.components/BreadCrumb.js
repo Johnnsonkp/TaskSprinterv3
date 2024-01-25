@@ -3,13 +3,12 @@ import React from "react";
 
 function BreadCrumbComp() {
   return (
-    <Breadcrumb
-      style={{
-        margin: "8px 10px",
-      }}
-    >
-      <Breadcrumb.Item>{window.location.origin}</Breadcrumb.Item>
-      <Breadcrumb.Item>{window.location.pathname}</Breadcrumb.Item>
+    <Breadcrumb style={{ marginLeft: "20px", marginBottom: "0px !important" }}>
+      <Breadcrumb.Item>
+        <h2 style={{ marginBottom: "0px", marginTop: "5px" }}>
+          {window.location.pathname}
+        </h2>
+      </Breadcrumb.Item>
     </Breadcrumb>
   );
 }

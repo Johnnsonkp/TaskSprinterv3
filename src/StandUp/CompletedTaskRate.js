@@ -44,8 +44,8 @@ export default function CompletedTaskRate({ taskArr }) {
         style={{
           minWidth: 480,
           minWidth: 300,
-          minHeight: 230.14,
-          maxHeight: 230.14,
+          minHeight: 210.14,
+          maxHeight: 210.14,
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           background: "#C6FFDD",

@@ -6,7 +6,6 @@ import { useCallback, useEffect, useState } from "react";
 
 import LoadSpiner from "./components/ui.components/loadSpiner/loadSpiner";
 import Main from "./Pages/Main";
-import { defaultObj } from "./DefaultData/DefaultJSON";
 import { getData } from "./Services/NotionAPI/useFetchData";
 import { removeData } from "./Services/NotionAPI/useFetchData";
 
