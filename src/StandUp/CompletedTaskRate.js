@@ -35,6 +35,7 @@ export default function CompletedTaskRate({ taskArr }) {
       style={{
         background: "rgb(198, 255, 221)",
         marginTop: "0px",
+        backgroundImage: `url("/public/do-more.jpg")`,
       }}
     >
       <Card
@@ -50,6 +51,11 @@ export default function CompletedTaskRate({ taskArr }) {
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           background: "#C6FFDD",
           // background: "#e5fffd",
+          backgroundImage: `url("/public/do-more.jpg")`,
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          // border: "1px solid red",
           overflow: "hidden",
           padding: "0px !important",
           opacity: 1,
@@ -108,7 +114,10 @@ export default function CompletedTaskRate({ taskArr }) {
                 alignItems: "flex-start",
                 border: "1px solid lightGray",
                 backgroundColor: "#fff",
-                borderRadius: "15px",
+                borderRadius: "5px",
+                borderLeft: "5px solid orange",
+                borderTopLeftRadius: "2px",
+                borderBottomLeftRadius: "2px",
                 marginBottom: "5px",
                 paddingTop: "3px",
                 paddingBottom: "3px",
@@ -136,7 +145,10 @@ export default function CompletedTaskRate({ taskArr }) {
                 border: "1px solid lightGray",
                 backgroundColor: "#fff",
                 marginTop: "5px",
-                borderRadius: "15px",
+                borderRadius: "5px",
+                borderTopLeftRadius: "2px",
+                borderBottomLeftRadius: "2px",
+                borderLeft: "5px solid orange",
                 padding: "3px",
                 padding: "6px",
               }}

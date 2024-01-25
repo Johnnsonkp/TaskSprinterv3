@@ -118,6 +118,10 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
             padding: "5px",
             overflow: "visible",
           }}
+          pagination={{
+            position: "bottom",
+            pageSize: 13,
+          }}
           dataSource={allTasksArr}
           renderItem={(item, index) => (
             <List.Item

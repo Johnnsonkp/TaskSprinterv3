@@ -51,6 +51,7 @@ function Home() {
         height: "85vh",
         position: "relative",
         borderRadius: "20px",
+        boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
       }}
     >
       {loading ? <LoadSpiner /> : <HomeLayout />}

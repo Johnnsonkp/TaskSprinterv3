@@ -41,7 +41,11 @@
         width: 300px;
     }
     .logoContainer{
-        display: none;
+        width: 88%;
+        padding: 10px;
+    }
+    .logoContainer img{
+        height: 40px;
     }
 }
 @media screen and (max-width: 650px){
@@ -78,9 +82,6 @@
     .left p{
         font-size: 1rem;
     }
-    /* .left Button{
-        margin-top: 0px !important;
-    } */
     .left .desktop-view{
         display: none;
     }

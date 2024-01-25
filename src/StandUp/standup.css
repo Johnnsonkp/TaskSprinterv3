@@ -6,11 +6,14 @@
 
 @media screen and (max-width: 450px){
   .standup-card .priorities-card {
-    width: 100% !important;
+    /* width: 110% !important; */
     min-width: 80%;
+    width: 80% !important;
+    display: none !important;
   }
   .standup-card .ant-card-body button{
     left: 71% !important;
     top: -90px !important;
   }
 }
+

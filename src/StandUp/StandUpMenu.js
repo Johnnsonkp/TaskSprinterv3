@@ -1,6 +1,7 @@
 import "./standup.css";
 
 import CompletedTaskRate from "./CompletedTaskRate";
+import ProductivityCard from "./ProductivityCard";
 import StandUpComponentSimplified from "./StandUpComponent";
 
 export function StandUpMenu({ taskArr }) {
@@ -13,14 +14,14 @@ export function StandUpMenu({ taskArr }) {
         marginBottom: "15px",
       }}
     >
-      <span className="standupSimplified">
-        <StandUpComponentSimplified />
-      </span>
+      {/* <span className="standupSimplified"> */}
+      <StandUpComponentSimplified />
+      {/* </span> */}
       <span className="CompletedTaskRate">
         <CompletedTaskRate taskArr={taskArr} />
       </span>
       <span className="CompletedTaskRate">
-        <CompletedTaskRate taskArr={taskArr} />
+        <ProductivityCard taskArr={taskArr} />
       </span>
     </div>
   );

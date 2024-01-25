@@ -1,6 +1,7 @@
 export const styles = {
   container: {
     // minWidth: 450,
+    width: "100%",
     minHeight: 266.14,
     maxHeight: 266.14,
     textAlign: "left",
