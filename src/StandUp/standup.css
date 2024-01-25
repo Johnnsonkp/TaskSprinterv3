@@ -5,16 +5,12 @@
 }
 
 @media screen and (max-width: 450px){
-  .standup-card{
-    width: 380px !important;
+  .standup-card .priorities-card {
+    width: 100% !important;
     min-width: 80%;
   }
   .standup-card .ant-card-body button{
     left: 71% !important;
     top: -90px !important;
-  }
-  .standup-card .ant-card-body input {
-    width: 75% !important;
-    margin: auto;
   }
 }

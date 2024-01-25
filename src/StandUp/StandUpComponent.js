@@ -1,5 +1,5 @@
 import { Button, Card } from "antd";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { styles } from "./standUp.styles";
 
@@ -53,12 +53,12 @@ const StandUpComponentSimplified = () => {
   return (
     <div className="standup-card" style={styles.container}>
       <Card
+        className="priorities-card"
         title={flip ? `Daily Priorities (Max 3)` : `Daily Priorities (Max 3)`}
         bordered={true}
         style={{
-          minWidth: 280,
-          // width: 300,
-          width: "100%",
+          minWidth: 390,
+          width: 470,
           minHeight: 210.14,
           maxHeight: 210.14,
           textAlign: "left",
