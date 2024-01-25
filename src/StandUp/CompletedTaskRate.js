@@ -1,6 +1,5 @@
 import { Button, Card, Progress } from "antd";
 import React, { useEffect, useRef } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 import { reformatDate } from "../Helper/DateFormat";
 import { styles } from "./standUp.styles";

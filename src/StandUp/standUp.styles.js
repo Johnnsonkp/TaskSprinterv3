@@ -7,6 +7,7 @@ export const styles = {
     boxShadow: "0 0 5px 3px rgba(100 100 100 / 20%)",
     cursor: "pointer",
     minHeight: "220",
+
     background: "rgb(196, 132, 243)",
     background: "#C6FFDD",
     color: "#111",
