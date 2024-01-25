@@ -2,7 +2,7 @@ import { Select } from "antd";
 
 export default function StatusTab() {
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    console.log(`selected: ${value}`);
   };
   return (
     <Select
