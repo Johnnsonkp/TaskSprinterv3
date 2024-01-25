@@ -15,11 +15,9 @@
 .CompletedTaskRate .ant-card-body{
     padding: 10px;
 }
-
+/* taskliskContainer */
 @media screen and (max-width: 530px){
-    /* #taskliskContainer .expandBtn{
-        display: none;
-    } */
+    /* #taskliskContainer .ant-list-items li */
     #taskliskContainer .tasklistDate{
         display: none;
     }

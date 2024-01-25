@@ -56,9 +56,9 @@ const StandUpComponentSimplified = () => {
         title={flip ? `Daily Priorities (Max 3)` : `Daily Priorities (Max 3)`}
         bordered={true}
         style={{
-          minWidth: 400,
-          // minWidth: 400,
-          width: 480,
+          minWidth: 280,
+          // width: 300,
+          width: "100%",
           minHeight: 210.14,
           maxHeight: 210.14,
           textAlign: "left",

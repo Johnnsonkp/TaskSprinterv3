@@ -1,6 +1,6 @@
 export const styles = {
   container: {
-    minWidth: 450,
+    // minWidth: 450,
     minHeight: 266.14,
     maxHeight: 266.14,
     textAlign: "left",
@@ -8,8 +8,8 @@ export const styles = {
     cursor: "pointer",
     minHeight: "220",
 
-    background: "rgb(196, 132, 243)",
-    background: "#C6FFDD",
+    // background: "rgb(196, 132, 243)",
+    // background: "#C6FFDD",
     color: "#111",
   },
   taskContainer: {

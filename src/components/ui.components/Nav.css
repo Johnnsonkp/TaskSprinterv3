@@ -5,7 +5,7 @@
 }
 
 @media only screen and (max-width: 500px){
-    #mainNav .ant-layout-header{
+    #mainNav {
         padding: 0 10px !important;
         width: '100%';
         background-color: #333;

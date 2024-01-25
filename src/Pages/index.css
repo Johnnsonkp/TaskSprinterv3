@@ -1,7 +1,4 @@
-/* media query */
-/* .mobile-view{
-    display: none !important;
-} */
+
 @media screen and (max-width: 1200px){
     .right{
         flex: 0.2;
@@ -59,6 +56,9 @@
         justify-content: center;
         align-items: center;
         margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
     }
     .left h2{
         font-size: 4rem;

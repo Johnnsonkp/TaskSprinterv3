@@ -47,8 +47,8 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
       children: (
         <TaskListIndex
           task={
-            taskArr.filter((singleTask) => singleTask.completed === true) ||
-            taskArr
+            (completedTask && completedTask) || taskArr
+            // taskArr.filter((singleTask) => singleTask.completed === true)
           }
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
