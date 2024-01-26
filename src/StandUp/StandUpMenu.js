@@ -14,9 +14,7 @@ export function StandUpMenu({ taskArr }) {
         marginBottom: "15px",
       }}
     >
-      {/* <span className="standupSimplified"> */}
       <StandUpComponentSimplified />
-      {/* </span> */}
       <span className="CompletedTaskRate">
         <CompletedTaskRate taskArr={taskArr} />
       </span>

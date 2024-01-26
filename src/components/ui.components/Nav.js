@@ -28,19 +28,6 @@ export default function Nav() {
         <AppLogoContainer />
       </div>
       <Link to={"/"}></Link>
-      <div
-        style={{
-          border: "2px solid rgba(140, 140, 140, 0.3)",
-          borderRadius: "10px",
-          paddingLeft: "12px",
-          paddingRight: "12px",
-          height: "50px",
-          marginTop: "auto",
-          marginBottom: "auto",
-        }}
-      >
-        <Clock />
-      </div>
     </Header>
   );
 }

@@ -33,16 +33,17 @@ function PageBoilerPlate({ component }) {
                   padding: "0 4px 0px",
                 }}
               >
-                <BreadCrumbComp />
+                {/* <BreadCrumbComp /> */}
                 <Content
                   style={{
-                    padding: 24,
-                    margin: 0,
+                    margin: 24,
+                    // margin: 0,
                     minHeight: 280,
                     backgroundColor: "#f4f4f4",
                     borderRadius: "15px",
                   }}
                 >
+                  <BreadCrumbComp />
                   {component}
                 </Content>
               </Layout>

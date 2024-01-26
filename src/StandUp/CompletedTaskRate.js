@@ -40,7 +40,6 @@ export default function CompletedTaskRate({ taskArr }) {
     >
       <Card
         title="Completion Rate (%)"
-        // style={styles.card}
         bordered={true}
         style={{
           minWidth: 480,
@@ -50,12 +49,10 @@ export default function CompletedTaskRate({ taskArr }) {
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           background: "#C6FFDD",
-          // background: "#e5fffd",
           backgroundImage: `url("/public/do-more.jpg")`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          // border: "1px solid red",
           overflow: "hidden",
           padding: "0px !important",
           opacity: 1,
@@ -65,7 +62,6 @@ export default function CompletedTaskRate({ taskArr }) {
           style={{
             display: "flex",
             flexDirection: "row",
-            // alignItems: "flex-start",
             justifyContent: "space-between",
             marginTop: "0px",
             background: "transparent",
@@ -92,7 +88,6 @@ export default function CompletedTaskRate({ taskArr }) {
             }
             trailColor={"#9996"}
             style={{
-              background: "rgba(255,255,255,0.3)",
               background: "transparent",
               paddingTop: "10px",
               paddingBottom: "10px",
@@ -112,10 +107,10 @@ export default function CompletedTaskRate({ taskArr }) {
                 display: "flex",
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
-                border: "1px solid lightGray",
                 backgroundColor: "#fff",
+                backgroundColor: "#F4F4F5",
                 borderRadius: "5px",
-                borderLeft: "5px solid orange",
+                borderLeft: "5px solid blue",
                 borderTopLeftRadius: "2px",
                 borderBottomLeftRadius: "2px",
                 marginBottom: "5px",
@@ -124,8 +119,8 @@ export default function CompletedTaskRate({ taskArr }) {
                 padding: "6px",
               }}
             >
-              <p style={{ marginTop: "0px", margin: "0px" }}>Task Created: </p>
-              <p
+              <a style={{ marginTop: "0px", margin: "0px" }}>Task Created: </a>
+              <a
                 style={{
                   paddingLeftt: "0px",
                   marginTop: "0px",
@@ -134,7 +129,7 @@ export default function CompletedTaskRate({ taskArr }) {
                 }}
               >
                 {taskCreatedToday()}
-              </p>
+              </a>
             </div>
             <div
               style={{
@@ -142,21 +137,20 @@ export default function CompletedTaskRate({ taskArr }) {
                 justifyContent: "center",
                 alignItems: "center",
                 margin: "0px",
-                border: "1px solid lightGray",
-                backgroundColor: "#fff",
+                backgroundColor: "#F4F4F5",
                 marginTop: "5px",
                 borderRadius: "5px",
                 borderTopLeftRadius: "2px",
                 borderBottomLeftRadius: "2px",
-                borderLeft: "5px solid orange",
+                borderLeft: "5px solid blue",
                 padding: "3px",
                 padding: "6px",
               }}
             >
-              <p style={{ margin: "0px" }}>Task Completed: </p>
-              <p style={{ paddingRight: "0px", margin: "0px" }}>
+              <a style={{ margin: "0px" }}>Task Completed: </a>
+              <a style={{ paddingRight: "0px", margin: "0px" }}>
                 {completedTaskCount()}
-              </p>
+              </a>
             </div>
           </div>
         </div>

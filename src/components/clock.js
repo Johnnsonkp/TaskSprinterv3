@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Clock(color) {
+export default function Clock({ color, fontSize, fontWeight }) {
   const current = new Date();
   const initialDataObj = {
     hours: current.getHours(),
@@ -35,10 +35,10 @@ export default function Clock(color) {
   return (
     <div
       style={{
-        color: "#fff",
-        fontWeight: "900",
-        fontSize: "18px",
-        width: "100%",
+        color: color ? color : "#fff",
+        fontWeight: fontWeight ? fontWeight : "900",
+        fontSize: fontSize ? fontSize : "18px",
+        // width: "100%",
       }}
     >
       {clock.hours} : {clock.minutes} : {clock.seconds}

@@ -33,15 +33,12 @@ function SideMenu() {
     <Menu
       id="sideMenu"
       mode="inline"
-      // defaultSelectedKeys={"/dashboard"}
       selectedKeys={defaultSelectedKey}
       style={{
         height: "100%",
         borderRight: 0,
         textAlign: "left",
         background: `url("/header-background copy.svg")`,
-        // backgroundOpacity: "0.2",
-        // backgroundColor: "#e5e6e6",
       }}
       items={[
         {

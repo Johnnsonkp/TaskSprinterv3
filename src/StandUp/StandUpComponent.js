@@ -65,6 +65,7 @@ const StandUpComponentSimplified = () => {
         boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
         background: "#C6FFDD",
         background: "#e5fffd",
+        // background: "#fff",
       }}
     >
       <Button
