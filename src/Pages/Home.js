@@ -14,7 +14,6 @@ function Home() {
           top: "10%",
           fontSize: "50rem",
           border: "5px solid white",
-
           margin: "auto",
           position: "absolute",
           top: 0,

@@ -4,6 +4,7 @@ import { Button } from "antd";
 import { DefaultContainer } from "../Containers/DefaultContainer";
 import { Link } from "react-router-dom";
 import Nav from "../components/ui.components/Nav";
+import TypeWriterEffect from "../components/typewriter-effect/TypeWriterEffect";
 
 export default function LandingPage() {
   return (
@@ -20,7 +21,15 @@ export default function LandingPage() {
                     marginBottom: "0px",
                   }}
                 >
-                  <h2>Elevate Your Productivity</h2>
+                  <h2>
+                    {/* Elevate Your{" "}
+                    <TypeWriterEffect 
+                      text="Productivity"
+                      delay={180}
+                      infinite
+                    />{" "} */}
+                    Elevate Your Productivity
+                  </h2>
                   <p>
                     The new era of task management were the synergy of React,
                     Notion, and OpenAI converges to redefine your productivity

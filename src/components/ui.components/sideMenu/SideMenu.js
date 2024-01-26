@@ -12,53 +12,71 @@ import { Menu } from "antd";
 
 function SideMenu() {
   const [defaultSelectedKey, setDefaultSelectedKey] = useState(
-    window.location.pathname.toString() || "Dashboard"
+    window.location.pathname.toString()
   );
+  const [loaded, setLoaded] = useState(false);
+
   const handleLinkClick = (event) => {
     // window.location.assign(`/${event.target.innerText}`);
     setDefaultSelectedKey(window.location.pathname.toString());
   };
+  setTimeout(() => {
+    console.log("setTimeout", window.location.pathname.toString());
+    setLoaded(true);
+  }, [3000]);
+
   useEffect(() => {
+    console.log("useFfect selected key", window.location.pathname.toString());
     setDefaultSelectedKey(window.location.pathname.toString());
-  }, [defaultSelectedKey]);
+  }, [loaded]);
   return (
     <Menu
       id="sideMenu"
       mode="inline"
-      defaultSelectedKeys={[defaultSelectedKey]}
-      selectedKeys={[defaultSelectedKey]}
+      // defaultSelectedKeys={"/dashboard"}
+      selectedKeys={defaultSelectedKey}
       style={{
         height: "100%",
         borderRight: 0,
         textAlign: "left",
         background: `url("/header-background copy.svg")`,
+        // backgroundOpacity: "0.2",
         // backgroundColor: "#e5e6e6",
       }}
       items={[
         {
-          key: "/Home",
+          key: "/home",
           icon: <UserOutlined size="large" />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
-              <Link to="/Home">Home</Link>
+              <Link to="/home">Home</Link>
             </h4>
           ),
         },
         {
-          key: "/Dashboard",
+          key: "/dashboard",
           icon: <LaptopOutlined />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
-              <Link to="/Dashboard">Dashboard</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </h4>
           ),
         },
         {
-          key: "/Notes",
+          key: "/notes",
           icon: <NotificationOutlined />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
-              <Link to="/Notes">Notes</Link>
+              <Link to="/notes">Notes</Link>
+            </h4>
+          ),
+        },
+        {
+          key: "/notion",
+          icon: <UserOutlined size="large" />,
+          label: (
+            <h4 onClick={(event) => handleLinkClick(event)}>
+              <Link to="/notion">Notion</Link>
             </h4>
           ),
         },

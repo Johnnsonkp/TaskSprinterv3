@@ -21,6 +21,7 @@ export default function Nav() {
         width: "100%",
         borderBottom: "4px solid #573376",
         zIndex: "1000px",
+        overflow: "hidden",
       }}
     >
       <div className="demo-logo">

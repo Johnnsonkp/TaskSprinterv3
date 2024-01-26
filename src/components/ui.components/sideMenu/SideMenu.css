@@ -1,8 +1,7 @@
 #sideMenu li.ant-menu-item {
-    /* border: 1px solid lightgray;
-    background: #e5e6e6; */
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+    margin-left: 0px !important;
     padding-top: 23px !important;
     padding-bottom: 23px !important;
 }
@@ -10,12 +9,15 @@
 #sideMenu li.ant-menu-item .ant-menu-item-selected{
     border: 1px solid lightgray;
     background: #e5e6e6;
-    border: 1px solid red !important;
+    /* border: 1px solid red !important; */
 }
 
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-light .ant-menu-item-selected{
+aside .ant-menu-item-selected{
     border-left: 5px solid blue !important;
-    background-color: rgba(229, 255, 253, 0.6)!important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    margin-left: 0px !important;
+    background-color: rgba(229, 255, 253, 0.8)!important;
 }
 
 #sideMenu h4{

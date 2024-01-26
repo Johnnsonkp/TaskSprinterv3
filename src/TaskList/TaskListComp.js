@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { Button, Collapse, Divider, Drawer, Space } from "antd";
+import { Button, Collapse, Divider, Drawer, Popconfirm, Space } from "antd";
 import {
   CheckCircleOutlined,
   CloseSquareOutlined,
@@ -112,9 +112,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
         <List
           style={{
             cursor: "pointer",
-            border: "1px solid red",
-            border: "1px solid rgba(5, 5, 5, 0.06)",
-            borderRadius: "10px",
+            // borderRadius: "10px",
             padding: "5px",
             overflow: "visible",
           }}
@@ -129,21 +127,43 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               className="taskList"
               style={{
                 backgroundColor: item.completed
-                  ? "rgba(0, 200, 117, 0.1)"
-                  : "rgba(140, 140, 140, 0.15)",
+                  ? "rgba(200,255,221,0.3)"
+                  : "#f4f4f4",
                 margin: "2px",
-                borderRadius: "5px",
                 padding: "3px 10px",
                 borderLeft: `5px solid ${
                   item.completed ? "rgba(103, 245, 149, 1)" : "#1890ff70"
                 }`,
               }}
+              actions={[
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Popconfirm
+                    title={"Are you sure you want to delete?"}
+                    onConfirm={() => onTaskDelete(item)}
+                  >
+                    <CloseSquareOutlined
+                      className="CloseSquareOutlined"
+                      style={{
+                        color: "red",
+                        fontSize: "25px",
+                        cursor: "pointer",
+                        border: "1px solid red",
+                      }}
+                      // onClick={() => onTaskDelete(item)}
+                    />
+                  </Popconfirm>
+                </div>,
+              ]}
             >
               <List.Item.Meta
                 style={{
                   textAlign: "left",
                   flex: 2.3,
-                  // border: "1px solid red",
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -170,7 +190,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                       style={{
                         width: "40px",
                         background: "transparent",
-                        marginRight: "5px",
+                        marginRight: "0px",
                         marginLeft: "5px",
                         border: "1px solid #fff",
                       }}
@@ -191,9 +211,6 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                   </a>
                 }
               />
-              {/* <span className="customDivider">
-                <CustomDivider className="customDivider" />
-              </span> */}
               {item.subtasks && <MessageOutlined className="customDivider" />}
               <span style={{ width: "10px" }}></span>
               <button
@@ -206,9 +223,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <span
                 className="customDivider"
                 style={{ marginLeft: "5px", marginRight: "5px" }}
-              >
-                {/* <CustomDivider className="customDivider" /> */}
-              </span>
+              ></span>
               <span
                 className="statusTab"
                 style={{ marginLeft: "5px", marginRight: "5px" }}
@@ -218,9 +233,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <span
                 className="customDivider"
                 style={{ marginLeft: "5px", marginRight: "5px" }}
-              >
-                {/* <CustomDivider className="customDivider" /> */}
-              </span>
+              ></span>
               <List.Item.Meta
                 className="tasklistDate"
                 style={{}}
@@ -229,7 +242,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                     <button
                       style={{
                         border: "1px solid lightGray",
-                        minWidth: "180px",
+                        // minWidth: "180px",
                       }}
                       onClick={(event) => event.preventDefault()}
                     >
@@ -251,19 +264,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
               <span
                 className="customDivider"
                 style={{ marginLeft: "5px", marginRight: "5px" }}
-              >
-                {/* <CustomDivider className="customDivider" /> */}
-              </span>
-              <CloseSquareOutlined
-                className="CloseSquareOutlined"
-                style={{
-                  color: "red",
-                  fontSize: "25px",
-                  cursor: "pointer",
-                  border: "1px solid red",
-                }}
-                onClick={() => onTaskDelete(item)}
-              />
+              ></span>
             </List.Item>
           )}
         />

@@ -89,6 +89,7 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
           padding: "10px 20px",
           backgroundColor: "#fff",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+          minHeight: "350px",
         }}
         items={initialItems}
       />
