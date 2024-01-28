@@ -203,4 +203,7 @@ aside .ant-menu-item{
   .CompletedTaskRate{
     display: none !important;
   }
+  #content{
+    margin: 5px !important;
+  }
 }

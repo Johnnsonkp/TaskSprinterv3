@@ -29,10 +29,12 @@ export const styles = {
     paddingLeft: "0px",
     paddingRight: "5px",
     display: "flex",
+    alignItems: "center",
+    margin: "0px",
   },
   button: {
     position: "relative",
-    top: "-80px",
+    top: "-90px",
     left: "75%",
     cursor: "pointer",
     fontSize: "14px",

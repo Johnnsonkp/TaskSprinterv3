@@ -1,36 +1,33 @@
 import React, { useEffect, useState } from "react";
 
-import Clock from "../components/clock";
+import { Calendar } from "antd";
 import LoadSpiner from "../components/ui.components/loadSpiner/loadSpiner";
 
 function Home() {
   const [loading, setLoading] = useState(true);
   const HomeLayout = () => {
+    const wrapperStyle = {
+      width: 300,
+      border: "3px solid lightGray",
+      borderRadius: "10px",
+      boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+    };
     return (
       <div
         style={{
-          color: "#333",
-          position: "absolute",
-          top: "10%",
-          fontSize: "50rem",
-          border: "5px solid white",
-          margin: "auto",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          width: "200px",
-          height: "50%",
-          fontSize: "30px !important",
-          zIndex: 9000,
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-around",
           borderRadius: "20px",
+          height: "100%",
         }}
       >
-        <Clock />
+        <div style={wrapperStyle}>
+          <Calendar fullscreen={false} />
+        </div>
+        <div style={wrapperStyle}>
+          <Calendar fullscreen={false} />
+        </div>
       </div>
     );
   };

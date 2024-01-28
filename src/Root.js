@@ -16,7 +16,6 @@ function PageBoilerPlate({ component }) {
         <Nav />
         <div className="App">
           <Layout>
-            {/* <Nav /> */}
             <Layout>
               <Sider
                 className="sider"
@@ -33,11 +32,10 @@ function PageBoilerPlate({ component }) {
                   padding: "0 4px 0px",
                 }}
               >
-                {/* <BreadCrumbComp /> */}
                 <Content
+                  id={"content"}
                   style={{
                     margin: 24,
-                    // margin: 0,
                     minHeight: 280,
                     backgroundColor: "#f4f4f4",
                     borderRadius: "15px",

@@ -1,0 +1,29 @@
+.progressSteps{
+    color: #fff !important;
+}
+.ant-steps-item-content>.ant-steps-item-description{
+    color: #fff !important;
+    font-weight: 600;
+}
+.ant-steps-item-title{
+    color: #fff !important;
+    font-weight: bold;
+}
+.ant-steps-icon{
+    color: #fff !important;
+    position: relative !important;
+}
+.ant-steps .ant-steps-item-process .ant-steps-item-icon{
+    z-index: 9000 !important;
+    position: relative !important;
+    border: 1px solid rgba(211, 211, 211, 0.23);
+}
+.ant-steps .ant-steps-item:not(.ant-steps-item-active)>.ant-steps-item-container[role='button'] .ant-steps-item-icon {
+    border: 1px solid rgba(211, 211, 211, 0.23);
+}
+.progresSteps.ant-card-body{
+    background-color: #333;
+}
+.ant-steps-item-tail{
+    background-color: rgba(211, 211, 211, 0.15) !important;
+}

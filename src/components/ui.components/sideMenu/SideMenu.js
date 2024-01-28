@@ -17,16 +17,13 @@ function SideMenu() {
   const [loaded, setLoaded] = useState(false);
 
   const handleLinkClick = (event) => {
-    // window.location.assign(`/${event.target.innerText}`);
     setDefaultSelectedKey(window.location.pathname.toString());
   };
   setTimeout(() => {
-    console.log("setTimeout", window.location.pathname.toString());
     setLoaded(true);
   }, [3000]);
 
   useEffect(() => {
-    console.log("useFfect selected key", window.location.pathname.toString());
     setDefaultSelectedKey(window.location.pathname.toString());
   }, [loaded]);
   return (
@@ -39,6 +36,7 @@ function SideMenu() {
         borderRight: 0,
         textAlign: "left",
         background: `url("/header-background copy.svg")`,
+        boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
       }}
       items={[
         {

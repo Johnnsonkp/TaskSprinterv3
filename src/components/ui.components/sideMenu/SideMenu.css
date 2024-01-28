@@ -19,6 +19,7 @@ aside .ant-menu-item-selected{
     margin-left: 0px !important;
     background-color: rgba(229, 255, 253, 0.8)!important;
     background-color: #F4F4F5!important;
+    box-shadow: 0 0 5px 3px rgba(100 100 100 / 30%);
 }
 
 #sideMenu h4{

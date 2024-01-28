@@ -51,11 +51,10 @@ const StandUpComponentSimplified = () => {
   };
 
   return (
-    // <div className="standup-card" style={styles.container}>
     <Card
       className="priorities-card"
       title={flip ? `Daily Priorities (Max 3)` : `Daily Priorities (Max 3)`}
-      bordered={true}
+      bordered={false}
       style={{
         minWidth: 390,
         width: 470,
@@ -63,9 +62,11 @@ const StandUpComponentSimplified = () => {
         maxHeight: 210.14,
         textAlign: "left",
         boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
-        background: "#C6FFDD",
-        background: "#e5fffd",
-        // background: "#fff",
+        background: "#7F7FD5" /* fallback for old browsers */,
+        background:
+          "-webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)" /* Chrome 10-25, Safari 5.1-6 */,
+        background:
+          "linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
       }}
     >
       <Button
@@ -95,11 +96,12 @@ const StandUpComponentSimplified = () => {
                 />
                 <label style={styles.taskContainer}>
                   <p style={styles.individualTask}>
-                    <div>{counter++}. </div>
+                    <h4 style={{ margin: "auto" }}>{counter++}. </h4>
                     <span
                       style={{
                         textDecoration: content.toggle ? "line-through" : null,
                         fontSize: "14px",
+                        paddingLeft: "5px",
                       }}
                     >
                       {content.task}
