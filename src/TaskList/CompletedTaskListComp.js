@@ -21,7 +21,11 @@ const onChange = (value) => {
   console.log("changed", value);
 };
 
-export default function TaskListComp({ task, handleDelete, UpdateTask }) {
+export default function CompletedTaskListComp({
+  task,
+  handleDelete,
+  UpdateTask,
+}) {
   const [open, setOpen] = useState(false);
   const [selectTask, setSelectTask] = useState();
   const [taskReloaded, setTaskReloaded] = useState();
@@ -120,7 +124,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
             position: "bottom",
             pageSize: 13,
           }}
-          dataSource={allTasksArr}
+          dataSource={task}
           renderItem={(item, index) => (
             <List.Item
               key={index}

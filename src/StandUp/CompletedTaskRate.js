@@ -1,5 +1,5 @@
 import { Button, Card, Progress } from "antd";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { reformatDate } from "../Helper/DateFormat";
 import { styles } from "./standUp.styles";
@@ -7,6 +7,7 @@ import { styles } from "./standUp.styles";
 const customStyles = { styles };
 
 export default function CompletedTaskRate({ taskArr }) {
+  const [percentage, setPercentage] = useState();
   const completedTaskCount = (taskArray) => {
     let counter = 0;
     {
@@ -29,6 +30,10 @@ export default function CompletedTaskRate({ taskArr }) {
     return parseInt(percentage);
   };
 
+  useEffect(() => {
+    setPercentage(completedPercentage(taskCreatedToday, completedTaskCount));
+  }, [taskArr]);
+
   return (
     <div
       id="completed"
@@ -46,11 +51,10 @@ export default function CompletedTaskRate({ taskArr }) {
           maxHeight: 210.14,
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
-          background: "#7F7FD5" /* fallback for old browsers */,
+          background: "#7F7FD5",
           background:
-            "-webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)" /* Chrome 10-25, Safari 5.1-6 */,
-          background:
-            "linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
+            "-webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)",
+          background: "linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5)",
           overflow: "hidden",
           padding: "0px !important",
           opacity: 1,
@@ -74,8 +78,8 @@ export default function CompletedTaskRate({ taskArr }) {
             )}
             size={120}
             strokeColor={
-              completedPercentage(completedTaskCount(), taskCreatedToday()) >=
-              80
+              // completedPercentage(completedTaskCount(), taskCreatedToday())
+              percentage >= 80
                 ? "lightGreen"
                 : completedPercentage(
                     completedTaskCount(),

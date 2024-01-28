@@ -1,6 +1,7 @@
 import { Button, Tabs } from "antd";
 import { useEffect, useState } from "react";
 
+import CompletedTaskListComp from "../TaskList/CompletedTaskListComp";
 import { Drawer } from "antd";
 import React from "react";
 import { StandUpMenu } from "../StandUp/StandUpMenu";
@@ -45,11 +46,8 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
     {
       label: "Completed Tasks",
       children: (
-        <TaskListIndex
-          task={
-            (completedTask && completedTask) || taskArr
-            // taskArr.filter((singleTask) => singleTask.completed === true)
-          }
+        <CompletedTaskListComp
+          task={completedTask}
           handleDelete={handleDelete}
           UpdateTask={UpdateTask}
         />
@@ -80,9 +78,7 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
   ];
   return (
     <>
-      <StandUpMenu
-        taskArr={(activeTask && activeTask.concat(completedTask)) || taskArr}
-      />
+      <StandUpMenu taskArr={taskArr} />
       <Tabs
         style={{
           borderRadius: "15px",
