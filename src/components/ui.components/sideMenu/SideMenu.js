@@ -1,8 +1,13 @@
 import "./SideMenu.css";
 
 import {
+  DashboardFilled,
+  DatabaseFilled,
   LaptopOutlined,
   NotificationOutlined,
+  PaperClipOutlined,
+  UserAddOutlined,
+  UserFilled,
   UserOutlined,
 } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
@@ -41,7 +46,7 @@ function SideMenu() {
       items={[
         {
           key: "/home",
-          icon: <UserOutlined size="large" />,
+          icon: <UserAddOutlined size="large" />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
               <Link to="/home">Home</Link>
@@ -50,7 +55,7 @@ function SideMenu() {
         },
         {
           key: "/dashboard",
-          icon: <LaptopOutlined />,
+          icon: <DashboardFilled />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
               <Link to="/dashboard">Dashboard</Link>
@@ -59,7 +64,7 @@ function SideMenu() {
         },
         {
           key: "/notes",
-          icon: <NotificationOutlined />,
+          icon: <PaperClipOutlined />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
               <Link to="/notes">Notes</Link>
@@ -67,11 +72,11 @@ function SideMenu() {
           ),
         },
         {
-          key: "/notion",
-          icon: <UserOutlined size="large" />,
+          key: "/notion-db",
+          icon: <DatabaseFilled size="large" />,
           label: (
             <h4 onClick={(event) => handleLinkClick(event)}>
-              <Link to="/notion">Notion</Link>
+              <Link to="/notion-db">Notion Database</Link>
             </h4>
           ),
         },

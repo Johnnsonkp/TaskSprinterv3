@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./Pages/Home";
 import LandingPage from "./Pages/LandingPage";
+import Notion from "./Pages/Notion";
 import PageBoilerPlate from "./Root";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <PageBoilerPlate component={<App />} />,
+  },
+  {
+    path: "/notion-db",
+    element: <PageBoilerPlate component={<Notion />} />,
   },
 ]);
 

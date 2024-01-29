@@ -37,6 +37,7 @@ function PageBoilerPlate({ component }) {
                   style={{
                     margin: 24,
                     minHeight: 280,
+                    height: "100%",
                     backgroundColor: "#f4f4f4",
                     borderRadius: "15px",
                   }}

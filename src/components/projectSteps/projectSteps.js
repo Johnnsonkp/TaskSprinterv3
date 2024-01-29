@@ -25,15 +25,15 @@ const ProjectSteps = ({ style }) => {
         }}
         items={[
           {
-            title: "Step 1",
+            title: "Organise Turkey Trip",
             // description,
           },
           {
-            title: "Step 2",
+            title: "Finish Next Portfolio",
             // description,
           },
           {
-            title: "Step 3",
+            title: "Create daily schedule",
             // description,
           },
         ]}

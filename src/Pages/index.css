@@ -1,3 +1,8 @@
+/* notion iframe */
+iframe {
+    /* border: 1px solid black; */
+    width: 100%; /* takes precedence over the width set with the HTML width attribute */
+}
 
 @media screen and (max-width: 1200px){
     .right{
