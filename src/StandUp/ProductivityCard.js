@@ -1,3 +1,5 @@
+import "./standup.css";
+
 import { Button, Card, Progress } from "antd";
 import React, { useEffect, useRef } from "react";
 
@@ -8,6 +10,7 @@ export default function ProductivityCard({ taskArr }) {
     <>
       <Card
         title={"Monthly Goals"}
+        id="monthlyCard"
         bordered={false}
         style={{
           minWidth: 300,
@@ -16,7 +19,6 @@ export default function ProductivityCard({ taskArr }) {
           textAlign: "left",
           boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
           backgroundColor: "#111",
-          backgroundImage: `url("/do-more-2.jpg")`,
           backgroundPosition: "center top",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",

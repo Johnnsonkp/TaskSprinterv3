@@ -1,3 +1,12 @@
+#monthlyCard{
+  color: #fff !important;
+}
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-card .ant-card-head-title {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+
 @media screen and (max-width: 800px){
     .CompletedTaskRate{
       display: none !important;
