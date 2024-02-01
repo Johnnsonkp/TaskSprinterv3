@@ -1,11 +1,23 @@
 #monthlyCard{
   color: #fff !important;
 }
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-card .ant-card-head-title {
+.ant-card .ant-card-head-title {
   color: #fff !important;
   font-weight: bold;
 }
-
+.ant-card button{
+  border: none;
+}
+.ant-card .ant-card-head{
+  border-bottom: none;
+}
+.ant-card .ant-card-body{
+  padding-top: 0px;
+}
+.ant-progress.ant-progress-circle .ant-progress-text{
+  color: #fff;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 800px){
     .CompletedTaskRate{

@@ -1,3 +1,5 @@
+import "./standup.css";
+
 import { Button, Card, Progress } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 

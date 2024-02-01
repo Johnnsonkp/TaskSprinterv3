@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Calendar } from "antd";
 import LoadSpiner from "../components/ui.components/loadSpiner/loadSpiner";
+import ProductivityCard from "../StandUp/ProductivityCard";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -26,7 +27,7 @@ function Home() {
           <Calendar fullscreen={false} />
         </div>
         <div style={wrapperStyle}>
-          <Calendar fullscreen={false} />
+          <ProductivityCard />
         </div>
       </div>
     );
