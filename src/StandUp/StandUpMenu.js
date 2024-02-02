@@ -11,7 +11,7 @@ export function StandUpMenu({ taskArr }) {
         display: "flex",
         justifyContent: "space-between",
         borderRadius: "15px",
-        marginBottom: "15px",
+        marginBottom: "20px",
       }}
     >
       <StandUpComponentSimplified />

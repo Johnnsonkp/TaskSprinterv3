@@ -22,6 +22,17 @@
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-tabs-top >.ant-tabs-nav{
     margin: 0px;
 }
+.closeSquareOutlined{
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid red;
+}
+.taskListWrapper{
+    cursor: pointer;
+    padding: 5px;
+    overflow: visible;
+}
 /* taskliskContainer */
 @media screen and (max-width: 530px){
     #taskliskContainer .tasklistDate{

@@ -12,7 +12,7 @@ export function DefaultInput({
   return (
     <>
       {counter <= 3 && (
-        <>
+        <div style={{ display: "flex", marginTop: "5px" }}>
           <input
             onChange={(event) => handleChange(event)}
             value={toggle ? "" : input}
@@ -20,12 +20,12 @@ export function DefaultInput({
             style={{ width: "80%", padding: "5px" }}
           />
           <button
-            style={{ marginLeft: "5px", cursor: "pointer" }}
+            style={{ marginLeft: "5px", cursor: "pointer", fontSize: "11px" }}
             onClick={() => handleAddStandup()}
           >
             Add Task
           </button>
-        </>
+        </div>
       )}
     </>
   );
@@ -51,16 +51,18 @@ export function StandUpInput({
                 type="checkbox"
                 id={key}
                 checked={content.toggle}
+                defaultChecked={false}
                 onClick={() => onTaskToggle(content)}
               />
               <label style={styles.taskContainer}>
                 <p style={styles.individualTask}>
-                  <h4 style={{ margin: "auto" }}>{counter++}. </h4>
+                  <p style={{ margin: "auto" }}>{counter++}. </p>
                   <span
                     style={{
                       textDecoration: content.toggle ? "line-through" : null,
-                      fontSize: "14px",
+                      fontSize: "13px",
                       paddingLeft: "5px",
+                      paddingTop: "2px",
                     }}
                   >
                     {content.task}

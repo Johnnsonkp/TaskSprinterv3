@@ -43,6 +43,7 @@ function Home() {
       style={{
         background: `url("/home-images/pink-back.jpg")`,
         background: `url("/home-images/water-peace.jpg")`,
+        background: `url("/home-images/dashboard.jpeg") 0% 0% / cover no-repeat`,
         backgroundSize: "cover",
         width: "100%",
         height: "85vh",
