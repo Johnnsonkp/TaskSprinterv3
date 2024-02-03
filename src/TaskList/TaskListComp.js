@@ -127,8 +127,12 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 backgroundColor: item.completed
                   ? "rgba(200,255,221,0.3)"
                   : "#f4f4f4",
-                margin: "2px",
-                padding: "3px 10px",
+                margin: "3px",
+                height: "35px",
+                padding: "0px 10px",
+                display: "flex",
+                alignItems: "center",
+                border: "none",
                 borderLeft: `5px solid ${
                   item.completed ? "rgba(103, 245, 149, 1)" : "#1890ff70"
                 }`,
@@ -146,6 +150,7 @@ export default function TaskListComp({ task, handleDelete, UpdateTask }) {
                 item={item}
                 TaskCompleteClicked={TaskCompleteClicked}
               />
+              <TaskListDivider />
               {item.subtasks && <MessageOutlined className="customDivider" />}
               <span style={{ width: "10px" }}></span>
               <button

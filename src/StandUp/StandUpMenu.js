@@ -14,11 +14,13 @@ export function StandUpMenu({ taskArr }) {
         marginBottom: "20px",
       }}
     >
-      <StandUpComponentSimplified />
-      <span className="CompletedTaskRate">
+      <div style={{ flex: 0.4 }}>
+        <StandUpComponentSimplified />
+      </div>
+      <span className="CompletedTaskRate" style={{ flex: 0.28 }}>
         <CompletedTaskRate taskArr={taskArr} />
       </span>
-      <span className="CompletedTaskRate">
+      <span className="CompletedTaskRate" style={{ flex: 0.28 }}>
         <ProductivityCard taskArr={taskArr} />
       </span>
     </div>

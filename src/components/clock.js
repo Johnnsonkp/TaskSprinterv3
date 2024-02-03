@@ -38,10 +38,10 @@ export default function Clock({ color, fontSize, fontWeight }) {
         color: color ? color : "#fff",
         fontWeight: fontWeight ? fontWeight : "900",
         fontSize: fontSize ? fontSize : "18px",
-        // width: "100%",
       }}
     >
       {clock.hours} : {clock.minutes} : {clock.seconds}
+      {/* {clock.hours} : {clock.minutes}pm */}
     </div>
   );
 }

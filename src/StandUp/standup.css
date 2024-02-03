@@ -21,6 +21,7 @@
 .priorities-card{
   min-width: 390px;
   width: 470px;
+  width: 100%;
   min-height: 210.14px;
   max-height: 210.14px;
   text-align: left;
@@ -42,6 +43,9 @@
 @media screen and (max-width: 800px){
     .CompletedTaskRate{
       display: none !important;
+    }
+    .breadcrumbClockDate{
+      flex: 0.8 !important;
     }
 }
 

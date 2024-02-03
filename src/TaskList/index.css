@@ -1,6 +1,6 @@
 .taskList:hover{
     background-color: #fff !important;
-    border: 1px solid rgba(5, 5, 5, 0.06);
+    border: 1px solid rgba(5, 5, 5, 0.06)!important;
     box-sizing: border-box;
 }
 :where(.css-dev-only-do-not-override-p7e5j5).ant-list .ant-list-item .ant-list-item-meta .ant-list-item-meta-avatar {
@@ -11,6 +11,9 @@
 }
 .CompletedTaskRate .ant-card-body{
     padding: 10px;
+}
+.ant-list .ant-list-item .ant-list-item-action {
+    margin-inline-start: 0px !important;
 }
 #taskliskContainer .ant-list{
     padding-top: 0px !important;

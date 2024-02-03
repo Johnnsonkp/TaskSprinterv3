@@ -90,7 +90,7 @@ export default function CompletedTaskRate({ taskArr }) {
                 ? "orange"
                 : "red"
             }
-            trailColor={"rgba(255, 255, 255, 0.3)"}
+            trailColor={"rgba(255, 255, 255, 0.2)"}
             style={{
               background: "transparent",
               paddingTop: "10px",
@@ -112,7 +112,7 @@ export default function CompletedTaskRate({ taskArr }) {
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
                 backgroundColor: "#fff",
-                backgroundColor: "rgba(255, 255, 255, 0.4)",
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
                 borderRadius: "5px",
                 borderLeft: "5px solid blue",
                 borderTopLeftRadius: "2px",
@@ -151,7 +151,7 @@ export default function CompletedTaskRate({ taskArr }) {
                 justifyContent: "center",
                 alignItems: "center",
                 margin: "0px",
-                backgroundColor: "rgba(255, 255, 255, 0.4)",
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
                 marginTop: "5px",
                 borderRadius: "5px",
                 borderTopLeftRadius: "2px",

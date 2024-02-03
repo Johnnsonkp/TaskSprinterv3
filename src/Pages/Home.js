@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Calendar } from "antd";
+import DateTimeWeather from "../components/ui.components/DateTimeWeatherWidget/DateTimeWeather";
 import LoadSpiner from "../components/ui.components/loadSpiner/loadSpiner";
 import ProductivityCard from "../StandUp/ProductivityCard";
 
@@ -12,6 +13,9 @@ function Home() {
       border: "3px solid lightGray",
       borderRadius: "10px",
       boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+      position: "absolute",
+      top: "10px",
+      right: "20px",
     };
     return (
       <div
@@ -21,11 +25,24 @@ function Home() {
           justifyContent: "space-around",
           borderRadius: "20px",
           height: "100%",
+          position: "relative",
         }}
       >
-        <div style={wrapperStyle}>
-          <Calendar fullscreen={false} />
+        <div style={{ position: "absolute", top: "10px", left: "10px" }}>
+          <DateTimeWeather />
         </div>
+        <Calendar
+          fullscreen={false}
+          style={{
+            width: "40%",
+            position: "absolute",
+            top: "260px",
+            right: "20px",
+            borderRadius: "10px",
+            boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
+            border: "3px solid lightGray",
+          }}
+        />
         <div style={wrapperStyle}>
           <ProductivityCard />
         </div>
@@ -41,8 +58,6 @@ function Home() {
   return (
     <div
       style={{
-        background: `url("/home-images/pink-back.jpg")`,
-        background: `url("/home-images/water-peace.jpg")`,
         background: `url("/home-images/dashboard.jpeg") 0% 0% / cover no-repeat`,
         backgroundSize: "cover",
         width: "100%",

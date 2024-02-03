@@ -51,6 +51,16 @@
   #taskliskContainer .ant-list-items li{
     height: 50px !important;
     width: 100% !important;
+    display: flex;
+  }
+  .closeSquareOutlined{
+    border: none !important;
+  }
+  .taskList .ant-list-item-meta{
+    flex: 0.95 !important;
+  }
+  .ant-select-single.ant-select-sm{
+    display: none;
   }
   .ant-tabs-mobile{
     padding-left: 0px !important;
