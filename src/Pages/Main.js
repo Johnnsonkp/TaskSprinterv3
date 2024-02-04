@@ -80,6 +80,7 @@ export default function Main({ taskArr, handleDelete, UpdateTask }) {
     <>
       <StandUpMenu taskArr={taskArr} />
       <Tabs
+        id="tab-mobile"
         style={{
           borderRadius: "15px",
           padding: "10px 20px",

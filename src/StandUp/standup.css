@@ -26,9 +26,12 @@
   max-height: 210.14px;
   text-align: left;
   box-shadow: 0 0 5px 3px rgba(100 100 100 / 30%) !important;
-  background: #7F7FD5 /* fallback for old browsers */;
+  /* background: #7F7FD5 ;
   background: -webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);
-  background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);  */
+  background-image: url(/public/6013781.jpg) !important;
+  background-position: center center;
+  background-size: cover;
 
   /* background-color: #f9fcff;
   background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%); */
@@ -58,6 +61,12 @@
   .standup-card .ant-card-body button{
     left: 71% !important;
     top: -90px !important;
+  }
+  #standUpCardsContainer{
+    display: block !important;
+  }
+  .standup-card .priorities-card{
+    box-shadow: none !important;
   }
 }
 

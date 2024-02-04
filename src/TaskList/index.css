@@ -22,7 +22,7 @@
 .ant-tabs-ink-bar{
     height: 3px !important;
 }
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-tabs-top >.ant-tabs-nav{
+#taskliskContainer .ant-tabs-top >.ant-tabs-nav{
     margin: 0px;
 }
 .closeSquareOutlined{
@@ -47,11 +47,12 @@
     :where(.css-dev-only-do-not-override-p7e5j5).ant-list .ant-list-item {
         flex-wrap: no-wrap;
     }
+
     .ant-list-item-meta-avatar svg {
-        margin-Right: 3px !important;
+        margin-Right: 0px !important;
     }
     #taskliskContainer .tasklistTitle{
-        font-size: 11px !important;
+        font-size: 13px !important;
     }
     .ant-list-item.taskList{
         margin-right: 0px !important;
@@ -65,11 +66,18 @@
         display: none;
     }
     #taskliskContainer .checkCircleOutlined{
-        font-size: 35px !important;
+        font-size: 43px !important;
         margin-right: 10px;
     }
-    #taskliskContainer .CloseSquareOutlined{
-        font-size: 29px !important;
+    #taskliskContainer .closeSquareOutlined{
+        font-size: 35px !important;
         margin-left: 5px;
+        border: '3px solid blue'
+    }
+    .ant-list-item.taskList{
+        padding-right: 0px !important;
+    }
+    .ant-tabs-nav{
+        margin-bottom: 0px !important;
     }
 }

@@ -1,3 +1,5 @@
+import "../StandUp/standup.css";
+
 import { CheckCircleOutlined } from "@ant-design/icons";
 import { InputNumber } from "antd";
 import { List } from "antd";

@@ -79,6 +79,9 @@ iframe {
         justify-content: center;
         align-items: center;
     }
+    #tab-mobile{
+        box-shadow: none !important;
+    }
 }
 @media screen and (max-width: 400px){
     .left h2{

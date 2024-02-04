@@ -7,6 +7,7 @@ import StandUpComponentSimplified from "./StandUpComponent";
 export function StandUpMenu({ taskArr }) {
   return (
     <div
+      id="standUpCardsContainer"
       style={{
         display: "flex",
         justifyContent: "space-between",
@@ -14,7 +15,7 @@ export function StandUpMenu({ taskArr }) {
         marginBottom: "20px",
       }}
     >
-      <div style={{ flex: 0.4 }}>
+      <div className="standUp-mobile" style={{ flex: 0.4 }}>
         <StandUpComponentSimplified />
       </div>
       <span className="CompletedTaskRate" style={{ flex: 0.28 }}>
