@@ -86,11 +86,11 @@ aside .ant-menu-item{
   z-index: 0;
   /* border: 1px solid red; */
 }
-.landing-page-image{
+/* .landing-page-image{
   width: 650px;
   z-index: 9000;
-  /* border: 1px solid red; */
-}
+  border: 1px solid red;
+} */
 #LandingPageTaskPageImage{
   background: url('/public/landing-logo-stack-2.png');
   background-position: center center;
@@ -180,7 +180,7 @@ aside .ant-menu-item{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid rgb(97, 218, 251);
+    border: 3px solid rgb(102, 10, 194);
     width: 70%;
     margin-top: 30px;
     margin-right: auto;
@@ -188,9 +188,8 @@ aside .ant-menu-item{
     margin-left: auto;
     border-radius: 50px;
     background-color: rgb(244, 244, 244);
-    box-shadow: rgba(0, 0, 0, 0.08) -2px 6px 10px 0px;
     max-width: 1200px;
-
+    box-shadow: 0 0 5px 3px rgba(100 100 100 / 30%);
 }
 
 @media screen and (max-width: 800px){

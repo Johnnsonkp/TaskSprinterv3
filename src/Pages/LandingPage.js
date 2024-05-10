@@ -11,7 +11,10 @@ export default function LandingPage() {
     <>
       <div>
         <Nav style={{ zIndex: "9000" }} />
-        <div id="landingPage-still">
+        <div
+          id="landingPage-still"
+          className="flex justify-center align-middle w-[100%]"
+        >
           <div className="left">
             <DefaultContainer
               content={
@@ -22,13 +25,13 @@ export default function LandingPage() {
                   }}
                 >
                   <h2>
-                    {/* Elevate Your{" "}
-                    <TypeWriterEffect 
+                    Elevate Your{" "}
+                    <TypeWriterEffect
                       text="Productivity"
                       delay={180}
                       infinite
-                    />{" "} */}
-                    Elevate Your Productivity
+                    />{" "}
+                    {/* Elevate Your Productivity */}
                   </h2>
                   <p>
                     The new era of task management were the synergy of React,
@@ -44,8 +47,10 @@ export default function LandingPage() {
           </div>
 
           <div className="right landing-grid-svg-image">
+            {/* <div className=""> */}
             <img
-              className="landing-page-image"
+              className="landing-page-image border border-solid border-2-orange"
+              // className="border border-solid border-2-orange w-1 h-1"
               src="/landing-black.png"
               alt="landing page"
             />
@@ -66,3 +71,4 @@ export default function LandingPage() {
     </>
   );
 }
+// boxShadow: "0 0 5px 3px rgba(100 100 100 / 30%)",
